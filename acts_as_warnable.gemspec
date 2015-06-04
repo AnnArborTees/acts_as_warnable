@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = ActsAsWarnable::VERSION
   s.authors     = ["Nigel Baillie"]
   s.email       = ["metreckk@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of ActsAsWarnable."
-  s.description = "TODO: Description of ActsAsWarnable."
+  # s.homepage    = "TODO"
+  s.summary     = "Manage large tasks by issuing warnings."
+  # s.description = ""
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
@@ -20,4 +20,5 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 4.2.1"
 
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency "liquid"
 end

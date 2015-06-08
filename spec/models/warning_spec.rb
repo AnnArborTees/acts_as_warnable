@@ -11,4 +11,7 @@ describe Warning do
     # class.
     it { is_expected.to belong_to(:dismisser).class_name('User') }
   end
+
+  context 'Validations' do
+  end
 end

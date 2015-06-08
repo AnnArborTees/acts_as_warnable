@@ -1,5 +1,6 @@
 require 'acts_as_warnable/version'
 require 'acts_as_warnable/engine'
+require 'acts_as_warnable/rails/routes'
 
 module ActsAsWarnable
   extend ActiveSupport::Concern
@@ -16,12 +17,16 @@ module ActsAsWarnable
 
   module WarnableInstanceMethods
     def issue_warning(message)
-      warnings.create(message: message)
+      warning = warnings.create(message: message)
+
+      if respond_to?(:create_activity)
+        create_activity(
+          key: 'warning.issue',
+          recipient: warning
+        )
+      end
     end
-    # TODO public activity? Perhaps in the controller
   end
-
-
 end
 
 ActiveRecord::Base.send :include, ActsAsWarnable

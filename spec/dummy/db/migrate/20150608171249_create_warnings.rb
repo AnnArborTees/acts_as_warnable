@@ -4,6 +4,8 @@ class CreateWarnings < ActiveRecord::Migration
       t.integer :warnable_id
       t.string :warnable_type
       t.text :message
+      t.datetime :dismissed_at
+      t.integer :dismisser_id
     end
   end
 end

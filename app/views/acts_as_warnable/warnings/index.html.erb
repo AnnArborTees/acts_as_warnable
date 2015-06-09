@@ -1,4 +1,11 @@
 <h1>Warnings</h1>
+
+<% if params[:active_only] %>
+  <%= link_to "Show dismissed", ActsAsWarnable::Engine.routes.url_helpers.warnings_path() %>
+<% else %>
+  <%= link_to "Hide dismissed", ActsAsWarnable::Engine.routes.url_helpers.warnings_path(active_only: true) %>
+<% end %>
+
 <ul>
   <% @warnings.each do |warning| %>
     <ul>

@@ -14,8 +14,11 @@ module ActsAsWarnable
     end
 
     def index
+      @warnings = Warning.all
+      @warnings = @warnings.active if params[:active_only]
+
       if params.key?(:warnable_id) && params.key?(:warnable_type)
-        @warnings = Warning.where(warnable_id: params[:warnable_id], warnable_type: params[:warnable_type])
+        @warnings = @warnings.where(warnable_id: params[:warnable_id], warnable_type: params[:warnable_type])
 
         @warnable = params[:warnable_type].constantize.find(params[:warnable_id])
         instance_variable_set('@'+params[:warnable_type].underscore, @warnable)
@@ -24,11 +27,7 @@ module ActsAsWarnable
         if lookup_context.exists?('warnings', warnables, false)
           render "#{warnables}/warnings"
         end
-      else
-        @warnings = Warning.all
       end
-
-      @warnings = @warnings.active if params[:active_only]
     end
 
     def update

@@ -1,13 +1,34 @@
 module ActsAsWarnable
-  class WarningsController < ApplicationController
+  class WarningsController < ::ApplicationController
     before_filter :fetch_warning, only: [:update, :show]
+    respond_to :html, :js
+
+    helper do
+      def method_missing(name, *args, &block)
+        if main_app.respond_to?(name)
+          main_app.send(name, *args, &block)
+        else
+          super
+        end
+      end
+    end
 
     def index
       if params.key?(:warnable_id) && params.key?(:warnable_type)
         @warnings = Warning.where(warnable_id: params[:warnable_id], warnable_type: params[:warnable_type])
+
+        @warnable = params[:warnable_type].constantize.find(params[:warnable_id])
+        instance_variable_set('@'+params[:warnable_type].underscore, @warnable)
+
+        warnables = params[:warnable_type].underscore.pluralize
+        if lookup_context.exists?('warnings', warnables, false)
+          render "#{warnables}/warnings"
+        end
       else
         @warnings = Warning.all
       end
+
+      @warnings = @warnings.active if params[:active_only]
     end
 
     def update
@@ -30,7 +51,7 @@ module ActsAsWarnable
     end
 
     def show
-      render params[:render]
+      render params[:render] if params.key?(:render)
     end
 
     protected

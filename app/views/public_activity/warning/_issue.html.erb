@@ -1,10 +1,11 @@
 <% if activity.recipient %>
   <div>
-    Warning #<%= link_to activity.recipient %> was issued from <%= activity.recipient.source %>
+    "<%= activity.recipient.source %>" issued
+    <%= link_to "a warning (##{activity.recipient_id})", ActsAsWarnable::Engine.routes.url_helpers.warning_path(activity.recipient) %>
   </div>
 
   <div>
-    <%= activity.recipient.message.truncate(15) %>
+    "<%= activity.recipient.message.truncate(40) %>"
   </div>
 
 <% else %>

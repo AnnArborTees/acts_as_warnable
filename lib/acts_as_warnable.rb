@@ -16,8 +16,8 @@ module ActsAsWarnable
   end
 
   module WarnableInstanceMethods
-    def issue_warning(message)
-      warning = warnings.create(message: message)
+    def issue_warning(source, message)
+      warning = warnings.create(source: source, message: message)
 
       if respond_to?(:create_activity)
         create_activity(

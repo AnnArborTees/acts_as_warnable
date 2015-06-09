@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150608181855) do
+ActiveRecord::Schema.define(version: 20150609185646) do
 
   create_table "test_objects", force: :cascade do |t|
     t.string "name"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20150608181855) do
   create_table "warnings", force: :cascade do |t|
     t.integer  "warnable_id"
     t.string   "warnable_type"
+    t.string   "source"
     t.text     "message"
     t.datetime "dismissed_at"
     t.integer  "dismisser_id"

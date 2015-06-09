@@ -10,9 +10,14 @@ class Warning < ActiveRecord::Base
   end
   belongs_to :dismisser, class_name: dismisser_class
 
-  validates :message, presence: true
+  validates :message, :source, presence: true
 
   before_save :check_if_dismissed
+  after_save :fire_dismissal_activity, if: :just_dismissed?
+
+  def self.active
+    where(dismissed_at: nil)
+  end
 
   def dismiss(user)
     update_attributes dismissed_at: Time.now, dismisser: user
@@ -22,7 +27,21 @@ class Warning < ActiveRecord::Base
     !dismissed_at.nil? && !dismisser.nil?
   end
 
+  def just_dismissed?
+    @just_dismissed
+  end
+
   protected
+
+  def fire_dismissal_activity
+    return unless warnable.respond_to?(:create_activity)
+
+    warnable.create_activity(
+      key: 'warning.dismiss',
+      recipient: self,
+      owner: dismisser
+    )
+  end
 
   def check_if_dismissed
     if dismisser_id_changed?
@@ -30,6 +49,7 @@ class Warning < ActiveRecord::Base
         self.dismissed_at = nil
       else
         self.dismissed_at = Time.now
+        @just_dismissed = true
       end
     end
   end

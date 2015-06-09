@@ -12,7 +12,7 @@ describe ActsAsWarnable do
     subject { TestObject.create(name: 'bill') }
 
     it 'creates a new warning with the given message' do
-      subject.issue_warning('Oh snap!!')
+      subject.issue_warning('acts_as_warnable_spec', 'Oh snap!!')
       expect(Warning.where(message: 'Oh snap!!')).to exist
     end
 
@@ -22,7 +22,7 @@ describe ActsAsWarnable do
         expect(subject).to receive(:create_activity)
           .with(key: 'warning.issue', recipient: anything)
 
-        subject.issue_warning('Oh snap!!')
+        subject.issue_warning('acts_as_warnable_spec', 'Oh snap!!')
       end
     end
   end

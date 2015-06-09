@@ -1,0 +1,12 @@
+<% if activity.recipient %>
+  <div>
+    Warning #<%= link_to activity.recipient %> was issued from <%= activity.recipient.source %>
+  </div>
+
+  <div>
+    <%= activity.recipient.message.truncate(15) %>
+  </div>
+
+<% else %>
+  Unknown warning was issued.
+<% end %>

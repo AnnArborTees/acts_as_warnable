@@ -1,5 +1,5 @@
 <%= if activity.recipient %>
-  The warning #<%= activity.recipient_id %>: <%= link_to activity.recipient.message.truncate(10), warning_path(activity.recipient) %>
+  The warning #<%= activity.recipient_id %> from <%= activity.recipient.source %>
   Was dismissed by <%= activity.owner.try(:full_name) || activity.owner.try(:email) || 'Someone' %>
 <% else %>
   Unknown warning was dismissed

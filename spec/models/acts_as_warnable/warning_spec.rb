@@ -14,6 +14,7 @@ describe Warning do
 
   context 'Validations' do
     it { is_expected.to validate_presence_of(:message) }
+    it { is_expected.to validate_presence_of(:source) }
   end
 
   describe 'when a dismisser_id is assigned' do
@@ -27,6 +28,23 @@ describe Warning do
       subject.save!
 
       expect(subject.dismissed_at).to eq now
+    end
+
+    context 'when public activity is available and the warnable is tracked' do
+      let(:test_warnable) { double('Warnable') }
+
+      before do
+        def test_warnable.create_activity(*args); end
+        allow(subject).to receive(:warnable).and_return test_warnable
+      end
+
+      it 'creates an activity on save' do
+        expect(test_warnable).to receive(:create_activity)
+          .with(key: 'warning.dismiss', recipient: subject, owner: user)
+
+        subject.dismisser_id = user.id
+        subject.save!
+      end
     end
   end
 end

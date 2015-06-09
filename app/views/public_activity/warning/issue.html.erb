@@ -1,0 +1,5 @@
+<%= if activity.recipient %>
+  Warning #<%= activity.recipient_id %> was issued: <%= link_to activity.recipient.message.truncate(10), warning_path(activity.recipient) %>
+<% else %>
+  Unknown warning was issued.
+<% end %>

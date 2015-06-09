@@ -13,5 +13,20 @@ describe Warning do
   end
 
   context 'Validations' do
+    it { is_expected.to validate_presence_of(:message) }
+  end
+
+  describe 'when a dismisser_id is assigned' do
+    it 'sets dismissed_at to Time.now' do
+      now = Time.now
+      allow(Time).to receive(:now).and_return now
+
+      expect(subject.dismissed_at).to be_nil
+
+      subject.dismisser_id = user.id
+      subject.save!
+
+      expect(subject.dismissed_at).to eq now
+    end
   end
 end

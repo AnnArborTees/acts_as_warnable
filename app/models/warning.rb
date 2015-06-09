@@ -12,9 +12,25 @@ class Warning < ActiveRecord::Base
 
   validates :message, presence: true
 
-  default_scope { where(dismissed_at: nil) }
+  before_save :check_if_dismissed
 
   def dismiss(user)
     update_attributes dismissed_at: Time.now, dismisser: user
+  end
+
+  def dismissed?
+    !dismissed_at.nil? && !dismisser.nil?
+  end
+
+  protected
+
+  def check_if_dismissed
+    if dismisser_id_changed?
+      if dismisser_id.nil?
+        self.dismissed_at = nil
+      else
+        self.dismissed_at = Time.now
+      end
+    end
   end
 end

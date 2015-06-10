@@ -1,4 +1,4 @@
-<h1>Warning #<%= @warning.id %> (<%= @warning.source %>)</h1>
+<h1>Warning #<%= @warning.id %> (<%= @warning.source %>) from <%= link_to "#{@warning.warnable_type.underscore.humanize} ##{@warning.warnable_id}", @warning.warnable %></h1>
 <div class='row'>
   <%= @warning.message %>
 </div>

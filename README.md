@@ -16,7 +16,8 @@ and run
 
 Next, run
     rails generate acts_as_warnable:warning
-to generate the migration for the warning model.
+to generate the migration for the warning model. Don't forget to
+`rake db:migrate`.
 
 Use
 ---

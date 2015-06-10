@@ -8,13 +8,13 @@
 
 <ul>
   <% @warnings.each do |warning| %>
-    <ul>
-      <%= link_to "##{warning.id}: #{warning.message.truncate(10)}", ActsAsWarnable::Engine.routes.url_helpers.warning_path(warning) %>
+    <li>
+      <%= link_to "##{warning.id}: (#{warning.source}) #{warning.message.truncate(50)}", ActsAsWarnable::Engine.routes.url_helpers.warning_path(warning) %>
       <% if warning.dismissed? %>
         <%= "(dismissed by #{warning.dismisser.try(:full_name) || warning.dismisser.try(:email)} on #{warning.dismissed_at.strftime('%c')})" if warning.dismissed? %>
       <% else %>
         <%= button_to_dismiss_warning(warning) %>
       <% end %>
-    </ul>
+    </li>
   <% end %>
 </ul>

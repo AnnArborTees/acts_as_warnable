@@ -19,6 +19,11 @@ Next, run
 to generate the migration for the warning model. Don't forget to
 `rake db:migrate`.
 
+In your routes.rb:
+```ruby
+mount ActsAsWarnable::Engine => '/'
+```
+
 Use
 ---
 

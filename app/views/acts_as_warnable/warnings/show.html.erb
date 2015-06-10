@@ -1,4 +1,4 @@
-<h1>Warning #<%= @warning.id %> (from <%= @warning.source %>)</h1>
+<h1>Warning #<%= @warning.id %> (<%= @warning.source %>)</h1>
 <div class='row'>
   <%= @warning.message %>
 </div>
@@ -7,6 +7,6 @@
     Dismissed by <%= @warning.dismisser.try(:full_name) || @warning.dismisser.try(:email) || 'someone' %>
     on <%= @warning.dismissed_at.strftime('%c') %>
   <% else %>
-    <%= link_to "##{warning.id}: #{warning.message.truncate(10)}", ActsAsWarnable::Engine.routes.url_helpers.warning_path(warning) %>
+    <%= button_to_dismiss_warning(@warning) %>
   <% end %>
 </div>

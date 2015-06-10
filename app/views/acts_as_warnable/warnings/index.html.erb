@@ -1,9 +1,23 @@
-<h1>Warnings</h1>
+<% if params[:warnable_type] %>
+  <h1>
+    <%= link_to "#{params[:warnable_type].humanize} ##{params[:warnable_id]}", @warnable %> Warnings
+  </h1>
+<% else %>
+  <h1>Warnings</h1>
+<% end %>
 
 <% if params[:active_only] %>
-  <%= link_to "Show dismissed", ActsAsWarnable::Engine.routes.url_helpers.warnings_path() %>
+  <% if params[:warnable_type] %>
+    <%= link_to "Show dismissed", send("#{params[:warnable_type].underscore}_warnings_path", params[:warnable_id]), { class: 'btn btn-info' } %>
+  <% else %>
+    <%= link_to "Show dismissed", ActsAsWarnable::Engine.routes.url_helpers.warnings_path, { class: 'btn btn-info' } %>
+  <% end %>
 <% else %>
-  <%= link_to "Hide dismissed", ActsAsWarnable::Engine.routes.url_helpers.warnings_path(active_only: true) %>
+  <% if params[:warnable_type] %>
+    <%= link_to "Hide dismissed", send("#{params[:warnable_type].underscore}_warnings_path", params[:warnable_id], active_only: true), { class: 'btn btn-info' } %>
+  <% else %>
+    <%= link_to "Hide dismissed", ActsAsWarnable::Engine.routes.url_helpers.warnings_path(active_only: true), { class: 'btn btn-info' } %>
+  <% end %>
 <% end %>
 
 <ul>

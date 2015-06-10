@@ -27,6 +27,21 @@ describe ActsAsWarnable do
         expect(subject.warnings.first.message).to include "Oh, no!"
       end
     end
+
+    context 'passed raise_anyway: true' do
+      before do
+        TestObject.class_eval do
+          def test_method
+            raise "Oh, no!" if false != true
+          end
+          warn_on_failure_of :test_method, raise_anyway: true
+        end
+      end
+      it 'issues the warning and re-raises the error' do
+        expect(subject).to receive :issue_warning
+        expect{subject.test_method}.to raise_error StandardError
+      end
+    end
   end
 
   describe '#issue_warning' do

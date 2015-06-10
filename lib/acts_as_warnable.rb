@@ -18,6 +18,8 @@ module ActsAsWarnable
 
   module WarnableClassMethods
     def warn_on_failure_of(*methods)
+      options = methods.last.is_a?(Hash) ? methods.pop : {}
+
       methods.each do |method_name|
         define_method "#{method_name}_with_warning" do |*args, &block|
           begin
@@ -27,6 +29,7 @@ module ActsAsWarnable
               warning_source(method_name),
               "#{e.class.name}: #{e.message}\n\n#{e.backtrace.join("\n")}"
             )
+            raise if options[:raise_anyway]
           end
         end
         alias_method_chain method_name, :warning

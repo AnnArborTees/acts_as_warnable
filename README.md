@@ -77,6 +77,13 @@ end
 
 Now, if `important_task` ever raises an error, it will issue a warning with a source
 of "TestObject#important_task" and the message will be "<error class>: <error message>".
+If you want the error to still be raised, this might interest you:
+
+```ruby
+warn_on_failure_of :important_task, raise_anyway: true
+```
+
+### Dismissal
 
 Warnings can also be "dismissed" by users of your app. As of right now, ActsAsWarnable
 depends on Devise, and the warning dismisser_id refers to the first Devise mapping in

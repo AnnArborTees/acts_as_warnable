@@ -2172,3 +2172,727 @@ Completed 302 Found in 12ms (ActiveRecord: 0.2ms)
   [1m[35mSQL (0.4ms)[0m  INSERT INTO "warnings" ("source", "message", "warnable_id", "warnable_type") VALUES (?, ?, ?, ?)  [["source", "TestObject#test_method"], ["message", "RuntimeError: Oh, no!\n\n/home/nigel/r/acts_as_warnable/spec/lib/acts_as_warnable_spec.rb:15:in `test_method_without_warning (test_method)'\n/home/nigel/r/acts_as_warnable/lib/acts_as_warnable.rb:24:in `warn_on_failure_of'\n/home/nigel/r/acts_as_warnable/spec/lib/acts_as_warnable_spec.rb:25:in `__script__'\nkernel/bootstrap/proc.rb:20:in `call'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/matchers/built_in/raise_error.rb:43:in `matches?'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/matchers/built_in/raise_error.rb:62:in `does_not_match?'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/handler.rb:78:in `does_not_match?'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/handler.rb:72:in `handle_matcher'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/handler.rb:27:in `with_matcher'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/handler.rb:70:in `handle_matcher'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/expectation_target.rb:67:in `not_to'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/expectation_target.rb:92:in `to_not (not_to)'\n/home/nigel/r/acts_as_warnable/spec/lib/acts_as_warnable_spec.rb:25:in `__script__'\nkernel/common/eval.rb:101:in `instance_exec'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:177:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:385:in `with_around_and_singleton_context_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:343:in `with_around_example_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:474:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:614:in `run_around_example_hooks_for'\nkernel/bootstrap/proc.rb:20:in `call'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:247:in `run (call)'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-rails-3.2.2/lib/rspec/rails/adapters.rb:126:in `__script__'\nkernel/common/eval.rb:101:in `instance_exec'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:333:in `instance_exec'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:387:in `execute_with'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:616:in `run_around_example_hooks_for'\nkernel/bootstrap/proc.rb:20:in `call'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:247:in `call'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:615:in `run_around_example_hooks_for'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:474:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:343:in `with_around_example_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:385:in `with_around_and_singleton_context_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:174:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:549:in `run_examples'\nkernel/bootstrap/array.rb:97:in `map'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:545:in `run_examples'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:512:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:513:in `run'\nkernel/bootstrap/array.rb:97:in `map'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:513:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:513:in `run'\nkernel/bootstrap/array.rb:97:in `map'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:513:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:110:in `run_specs'\nkernel/bootstrap/array.rb:97:in `map'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:110:in `run_specs'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/configuration.rb:1526:in `with_suite_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:109:in `run_specs'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/reporter.rb:62:in `report'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:108:in `run_specs'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:86:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:70:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:38:in `invoke'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/exe/rspec:4:in `__script__'\nkernel/common/kernel.rb:497:in `load'\n/home/nigel/.rvm/gems/rbx-2.5.2/bin/rspec:23:in `__script__'\nkernel/common/block_environment.rb:53:in `call_on_instance'\nkernel/common/eval.rb:176:in `eval'\n/home/nigel/.rvm/gems/rbx-2.5.2/bin/ruby_executable_hooks:15:in `__script__'\nkernel/delta/code_loader.rb:66:in `load_script'\nkernel/delta/code_loader.rb:152:in `load_script'\nkernel/loader.rb:655:in `script'\nkernel/loader.rb:809:in `main'"], ["warnable_id", 1], ["warnable_type", "TestObject"]]
   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (9.9ms)[0m  [1mCREATE TABLE "test_objects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar) [0m
+  [1m[35m (16.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (27.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (21.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (21.4ms)[0m  [1mCREATE TABLE "warnings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "warnable_id" integer, "warnable_type" varchar, "source" varchar, "message" text, "dismissed_at" datetime, "dismisser_id" integer) [0m
+  [1m[35m (21.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (9.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (20.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150609185646')[0m
+  [1m[35m (13.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150608162748')
+  [1m[36m (19.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150608181855')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "test_objects" ("name") VALUES (?)[0m  [["name", "jim"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "warnings" WHERE "warnings"."warnable_id" = ? AND "warnings"."warnable_type" = ?[0m  [["warnable_id", 1], ["warnable_type", "TestObject"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "warnings" ("source", "message", "warnable_id", "warnable_type") VALUES (?, ?, ?, ?)[0m  [["source", "TestObject#test_method"], ["message", "RuntimeError: Oh, no!\n\n/home/nigel/r/acts_as_warnable/spec/lib/acts_as_warnable_spec.rb:15:in `test_method_without_warning (test_method)'\n/home/nigel/r/acts_as_warnable/lib/acts_as_warnable.rb:26:in `warn_on_failure_of'\n/home/nigel/r/acts_as_warnable/spec/lib/acts_as_warnable_spec.rb:25:in `__script__'\nkernel/bootstrap/proc.rb:20:in `call'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/matchers/built_in/raise_error.rb:43:in `matches?'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/matchers/built_in/raise_error.rb:62:in `does_not_match?'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/handler.rb:78:in `does_not_match?'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/handler.rb:72:in `handle_matcher'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/handler.rb:27:in `with_matcher'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/handler.rb:70:in `handle_matcher'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/expectation_target.rb:67:in `not_to'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/expectation_target.rb:92:in `to_not (not_to)'\n/home/nigel/r/acts_as_warnable/spec/lib/acts_as_warnable_spec.rb:25:in `__script__'\nkernel/common/eval.rb:101:in `instance_exec'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:177:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:385:in `with_around_and_singleton_context_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:343:in `with_around_example_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:474:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:614:in `run_around_example_hooks_for'\nkernel/bootstrap/proc.rb:20:in `call'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:247:in `run (call)'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-rails-3.2.2/lib/rspec/rails/adapters.rb:126:in `__script__'\nkernel/common/eval.rb:101:in `instance_exec'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:333:in `instance_exec'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:387:in `execute_with'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:616:in `run_around_example_hooks_for'\nkernel/bootstrap/proc.rb:20:in `call'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:247:in `call'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:615:in `run_around_example_hooks_for'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:474:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:343:in `with_around_example_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:385:in `with_around_and_singleton_context_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:174:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:549:in `run_examples'\nkernel/bootstrap/array.rb:97:in `map'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:545:in `run_examples'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:512:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:513:in `run'\nkernel/bootstrap/array.rb:97:in `map'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:513:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:513:in `run'\nkernel/bootstrap/array.rb:97:in `map'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:513:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:110:in `run_specs'\nkernel/bootstrap/array.rb:97:in `map'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:110:in `run_specs'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/configuration.rb:1526:in `with_suite_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:109:in `run_specs'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/reporter.rb:62:in `report'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:108:in `run_specs'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:86:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:70:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:38:in `invoke'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/exe/rspec:4:in `__script__'\nkernel/common/kernel.rb:497:in `load'\n/home/nigel/.rvm/gems/rbx-2.5.2/bin/rspec:23:in `__script__'\nkernel/common/block_environment.rb:53:in `call_on_instance'\nkernel/common/eval.rb:176:in `eval'\n/home/nigel/.rvm/gems/rbx-2.5.2/bin/ruby_executable_hooks:15:in `__script__'\nkernel/delta/code_loader.rb:66:in `load_script'\nkernel/delta/code_loader.rb:152:in `load_script'\nkernel/loader.rb:655:in `script'\nkernel/loader.rb:809:in `main'"], ["warnable_id", 1], ["warnable_type", "TestObject"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "test_objects" ("name") VALUES (?)  [["name", "bill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "warnings" ("source", "message", "warnable_id", "warnable_type") VALUES (?, ?, ?, ?)[0m  [["source", "acts_as_warnable_spec"], ["message", "Oh snap!!"], ["warnable_id", 1], ["warnable_type", "TestObject"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mWarning Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "warnings" WHERE "warnings"."message" = ? LIMIT 1[0m  [["message", "Oh snap!!"]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "test_objects" ("name") VALUES (?)[0m  [["name", "bill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "warnings" ("source", "message", "warnable_id", "warnable_type") VALUES (?, ?, ?, ?)  [["source", "acts_as_warnable_spec"], ["message", "Oh snap!!"], ["warnable_id", 1], ["warnable_type", "TestObject"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ActsAsWarnable::WarningsController#update as HTML
+  Parameters: {"warning"=>{"message"=>""}, "id"=>"1"}
+  [1m[36mWarning Load (0.2ms)[0m  [1mSELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://test.host/warnings
+Completed 302 Found in 34ms (ActiveRecord: 0.5ms)
+  [1m[35mWarning Load (0.1ms)[0m  SELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'mrmcuser1@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "mrmcuser1@example.com"], ["encrypted_password", "$2a$04$yYyKz.5zR2vu3BKHJwbPnu6oxvwbN0k1f0rCannVN3ZdDdA.AKBye"], ["created_at", "2015-06-10 16:01:44.054642"], ["updated_at", "2015-06-10 16:01:44.054642"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActsAsWarnable::WarningsController#update as HTML
+  Parameters: {"warning"=>{"dismisser_id"=>"1"}, "id"=>"1"}
+  [1m[35mWarning Load (0.1ms)[0m  SELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1  [["id", 1]]
+Unpermitted parameter: id
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "warnings" SET "dismisser_id" = ?, "dismissed_at" = ? WHERE "warnings"."id" = ?  [["dismisser_id", 1], ["dismissed_at", "2015-06-10 16:01:44.069125"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://test.host/warnings
+Completed 302 Found in 15ms (ActiveRecord: 0.8ms)
+  [1m[36mWarning Load (0.1ms)[0m  [1mSELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ActsAsWarnable::WarningsController#update as HTML
+  Parameters: {"warning"=>{"message"=>"Dear lord"}, "id"=>"1"}
+  [1m[36mWarning Load (0.1ms)[0m  [1mSELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "warnings" SET "message" = ? WHERE "warnings"."id" = ?[0m  [["message", "Dear lord"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/warnings
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+  [1m[36mWarning Load (0.1ms)[0m  [1mSELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActsAsWarnable::WarningsController#index as HTML
+  Rendered /home/nigel/r/acts_as_warnable/app/views/acts_as_warnable/warnings/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 31ms (Views: 30.7ms | ActiveRecord: 0.0ms)
+  [1m[35mWarning Load (0.2ms)[0m  SELECT "warnings".* FROM "warnings"
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "test_objects" ("name") VALUES (?)[0m  [["name", "bob"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "warnings" SET "warnable_id" = ?, "warnable_type" = ? WHERE "warnings"."id" = ?[0m  [["warnable_id", 1], ["warnable_type", "TestObject"], ["id", 2]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ActsAsWarnable::WarningsController#index as HTML
+  Parameters: {"warnable_id"=>"1", "warnable_type"=>"TestObject"}
+  [1m[36mTestObject Load (0.7ms)[0m  [1mSELECT  "test_objects".* FROM "test_objects" WHERE "test_objects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered /home/nigel/r/acts_as_warnable/app/views/acts_as_warnable/warnings/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 25ms (Views: 3.5ms | ActiveRecord: 0.7ms)
+  [1m[35mWarning Load (0.4ms)[0m  SELECT "warnings".* FROM "warnings" WHERE "warnings"."warnable_id" = ? AND "warnings"."warnable_type" = ?  [["warnable_id", 1], ["warnable_type", "TestObject"]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'mrmcuser2@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "mrmcuser2@example.com"], ["encrypted_password", "$2a$04$EIfubmvw2mXjCKFuC2ljWOKh.rpH/babkiEyQTxc71xBjth1ZUXm6"], ["created_at", "2015-06-10 16:01:44.234644"], ["updated_at", "2015-06-10 16:01:44.234644"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "warnings" SET "dismisser_id" = ?, "dismissed_at" = ? WHERE "warnings"."id" = ?[0m  [["dismisser_id", 1], ["dismissed_at", "2015-06-10 16:01:44.234644"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'mrmcuser3@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "mrmcuser3@example.com"], ["encrypted_password", "$2a$04$scQInrmhqz6yySsuUmdCZuJtQv7Az4OTW.B4zlN795qJnsijP.hQu"], ["created_at", "2015-06-10 16:01:44.272137"], ["updated_at", "2015-06-10 16:01:44.272137"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "warnings" SET "dismisser_id" = ?, "dismissed_at" = ? WHERE "warnings"."id" = ?[0m  [["dismisser_id", 1], ["dismissed_at", "2015-06-10 16:01:44.277575"], ["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (24.2ms)[0m  [1mCREATE TABLE "test_objects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar) [0m
+  [1m[35m (10.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (21.7ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (9.4ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (21.7ms)[0m  [1mCREATE TABLE "warnings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "warnable_id" integer, "warnable_type" varchar, "source" varchar, "message" text, "dismissed_at" datetime, "dismisser_id" integer) [0m
+  [1m[35m (15.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (27.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (7.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150609185646')[0m
+  [1m[35m (13.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150608162748')
+  [1m[36m (13.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150608181855')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'mrmcuser1@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "mrmcuser1@example.com"], ["encrypted_password", "$2a$04$FMnQ19n0Wj/uEuVsKvf33utDheS2d.uIY277iiAgyrlB0QIloaUHS"], ["created_at", "2015-06-10 16:05:43.387723"], ["updated_at", "2015-06-10 16:05:43.387723"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "warnings" SET "dismisser_id" = ?, "dismissed_at" = ? WHERE "warnings"."id" = ?  [["dismisser_id", 1], ["dismissed_at", "2015-06-10 16:05:43.387723"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'mrmcuser2@example.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "mrmcuser2@example.com"], ["encrypted_password", "$2a$04$jwaIisZMx9aBKbLenAUqvuUXFREziYfO/R8yb3dOaRgr.C3wZu3mS"], ["created_at", "2015-06-10 16:05:43.645649"], ["updated_at", "2015-06-10 16:05:43.645649"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "warnings" SET "dismisser_id" = ?, "dismissed_at" = ? WHERE "warnings"."id" = ?  [["dismisser_id", 1], ["dismissed_at", "2015-06-10 16:05:43.648777"], ["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "test_objects" ("name") VALUES (?)  [["name", "bill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "warnings" ("source", "message", "warnable_id", "warnable_type") VALUES (?, ?, ?, ?)[0m  [["source", "acts_as_warnable_spec"], ["message", "Oh snap!!"], ["warnable_id", 1], ["warnable_type", "TestObject"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mWarning Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "warnings" WHERE "warnings"."message" = ? LIMIT 1[0m  [["message", "Oh snap!!"]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "test_objects" ("name") VALUES (?)[0m  [["name", "bill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "warnings" ("source", "message", "warnable_id", "warnable_type") VALUES (?, ?, ?, ?)  [["source", "acts_as_warnable_spec"], ["message", "Oh snap!!"], ["warnable_id", 1], ["warnable_type", "TestObject"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "test_objects" ("name") VALUES (?)[0m  [["name", "jim"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "warnings" WHERE "warnings"."warnable_id" = ? AND "warnings"."warnable_type" = ?[0m  [["warnable_id", 1], ["warnable_type", "TestObject"]]
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "warnings" ("source", "message", "warnable_id", "warnable_type") VALUES (?, ?, ?, ?)[0m  [["source", "TestObject#test_method"], ["message", "RuntimeError: Oh, no!\n\n/home/nigel/r/acts_as_warnable/spec/lib/acts_as_warnable_spec.rb:15:in `test_method_without_warning (test_method)'\n/home/nigel/r/acts_as_warnable/lib/acts_as_warnable.rb:26:in `warn_on_failure_of'\n/home/nigel/r/acts_as_warnable/spec/lib/acts_as_warnable_spec.rb:25:in `__script__'\nkernel/bootstrap/proc.rb:20:in `call'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/matchers/built_in/raise_error.rb:43:in `matches?'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/matchers/built_in/raise_error.rb:62:in `does_not_match?'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/handler.rb:78:in `does_not_match?'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/handler.rb:72:in `handle_matcher'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/handler.rb:27:in `with_matcher'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/handler.rb:70:in `handle_matcher'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/expectation_target.rb:67:in `not_to'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/expectation_target.rb:92:in `to_not (not_to)'\n/home/nigel/r/acts_as_warnable/spec/lib/acts_as_warnable_spec.rb:25:in `__script__'\nkernel/common/eval.rb:101:in `instance_exec'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:177:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:385:in `with_around_and_singleton_context_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:343:in `with_around_example_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:474:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:614:in `run_around_example_hooks_for'\nkernel/bootstrap/proc.rb:20:in `call'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:247:in `run (call)'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-rails-3.2.2/lib/rspec/rails/adapters.rb:126:in `__script__'\nkernel/common/eval.rb:101:in `instance_exec'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:333:in `instance_exec'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:387:in `execute_with'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:616:in `run_around_example_hooks_for'\nkernel/bootstrap/proc.rb:20:in `call'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:247:in `call'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:615:in `run_around_example_hooks_for'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:474:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:343:in `with_around_example_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:385:in `with_around_and_singleton_context_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:174:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:549:in `run_examples'\nkernel/bootstrap/array.rb:97:in `map'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:545:in `run_examples'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:512:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:513:in `run'\nkernel/bootstrap/array.rb:97:in `map'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:513:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:513:in `run'\nkernel/bootstrap/array.rb:97:in `map'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:513:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:110:in `run_specs'\nkernel/bootstrap/array.rb:97:in `map'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:110:in `run_specs'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/configuration.rb:1526:in `with_suite_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:109:in `run_specs'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/reporter.rb:62:in `report'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:108:in `run_specs'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:86:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:70:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:38:in `invoke'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/exe/rspec:4:in `__script__'\nkernel/common/kernel.rb:497:in `load'\n/home/nigel/.rvm/gems/rbx-2.5.2/bin/rspec:23:in `__script__'\nkernel/common/block_environment.rb:53:in `call_on_instance'\nkernel/common/eval.rb:176:in `eval'\n/home/nigel/.rvm/gems/rbx-2.5.2/bin/ruby_executable_hooks:15:in `__script__'\nkernel/delta/code_loader.rb:66:in `load_script'\nkernel/delta/code_loader.rb:152:in `load_script'\nkernel/loader.rb:655:in `script'\nkernel/loader.rb:809:in `main'"], ["warnable_id", 1], ["warnable_type", "TestObject"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "test_objects" ("name") VALUES (?)[0m  [["name", "bob"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "warnings" SET "warnable_id" = ?, "warnable_type" = ? WHERE "warnings"."id" = ?[0m  [["warnable_id", 1], ["warnable_type", "TestObject"], ["id", 2]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ActsAsWarnable::WarningsController#index as HTML
+  Parameters: {"warnable_id"=>"1", "warnable_type"=>"TestObject"}
+  [1m[36mTestObject Load (0.2ms)[0m  [1mSELECT  "test_objects".* FROM "test_objects" WHERE "test_objects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered /home/nigel/r/acts_as_warnable/app/views/acts_as_warnable/warnings/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 72ms (Views: 55.3ms | ActiveRecord: 0.2ms)
+  [1m[35mWarning Load (0.4ms)[0m  SELECT "warnings".* FROM "warnings" WHERE "warnings"."warnable_id" = ? AND "warnings"."warnable_type" = ?  [["warnable_id", 1], ["warnable_type", "TestObject"]]
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ActsAsWarnable::WarningsController#index as HTML
+  Rendered /home/nigel/r/acts_as_warnable/app/views/acts_as_warnable/warnings/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[36mWarning Load (0.2ms)[0m  [1mSELECT "warnings".* FROM "warnings"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ActsAsWarnable::WarningsController#update as HTML
+  Parameters: {"warning"=>{"message"=>"Dear lord"}, "id"=>"1"}
+  [1m[36mWarning Load (0.2ms)[0m  [1mSELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "warnings" SET "message" = ? WHERE "warnings"."id" = ?[0m  [["message", "Dear lord"], ["id", 1]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/warnings
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms)
+  [1m[36mWarning Load (0.2ms)[0m  [1mSELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'mrmcuser3@example.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "mrmcuser3@example.com"], ["encrypted_password", "$2a$04$WcKzarRQz0d6QmLghTdzKOftKywASzGb71SGy4KVcCcJyFWLPLZvO"], ["created_at", "2015-06-10 16:05:44.002667"], ["updated_at", "2015-06-10 16:05:44.002667"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ActsAsWarnable::WarningsController#update as HTML
+  Parameters: {"warning"=>{"dismisser_id"=>"1"}, "id"=>"1"}
+  [1m[36mWarning Load (0.1ms)[0m  [1mSELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "warnings" SET "dismisser_id" = ?, "dismissed_at" = ? WHERE "warnings"."id" = ?[0m  [["dismisser_id", 1], ["dismissed_at", "2015-06-10 16:05:44.008842"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://test.host/warnings
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+  [1m[35mWarning Load (0.1ms)[0m  SELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActsAsWarnable::WarningsController#update as HTML
+  Parameters: {"warning"=>{"message"=>""}, "id"=>"1"}
+  [1m[35mWarning Load (0.1ms)[0m  SELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1  [["id", 1]]
+Unpermitted parameter: id
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Redirected to http://test.host/warnings
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+  [1m[36mWarning Load (0.1ms)[0m  [1mSELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (22.8ms)[0m  [1mCREATE TABLE "test_objects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar) [0m
+  [1m[35m (9.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (15.5ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (15.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (21.8ms)[0m  [1mCREATE TABLE "warnings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "warnable_id" integer, "warnable_type" varchar, "source" varchar, "message" text, "dismissed_at" datetime, "dismisser_id" integer) [0m
+  [1m[35m (14.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (15.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (7.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150609185646')[0m
+  [1m[35m (7.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150608162748')
+  [1m[36m (13.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150608181855')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "test_objects" ("name") VALUES (?)[0m  [["name", "jim"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "test_objects" ("name") VALUES (?)  [["name", "jim"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "warnings" WHERE "warnings"."warnable_id" = ? AND "warnings"."warnable_type" = ?  [["warnable_id", 1], ["warnable_type", "TestObject"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "warnings" ("source", "message", "warnable_id", "warnable_type") VALUES (?, ?, ?, ?)  [["source", "TestObject#test_method"], ["message", "RuntimeError: Oh, no!\n\n/home/nigel/r/acts_as_warnable/spec/lib/acts_as_warnable_spec.rb:15:in `test_method_without_warning (test_method)'\n/home/nigel/r/acts_as_warnable/lib/acts_as_warnable.rb:26:in `warn_on_failure_of'\n/home/nigel/r/acts_as_warnable/spec/lib/acts_as_warnable_spec.rb:25:in `__script__'\nkernel/bootstrap/proc.rb:20:in `call'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/matchers/built_in/raise_error.rb:43:in `matches?'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/matchers/built_in/raise_error.rb:62:in `does_not_match?'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/handler.rb:78:in `does_not_match?'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/handler.rb:72:in `handle_matcher'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/handler.rb:27:in `with_matcher'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/handler.rb:70:in `handle_matcher'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/expectation_target.rb:67:in `not_to'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/expectation_target.rb:92:in `to_not (not_to)'\n/home/nigel/r/acts_as_warnable/spec/lib/acts_as_warnable_spec.rb:25:in `__script__'\nkernel/common/eval.rb:101:in `instance_exec'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:177:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:385:in `with_around_and_singleton_context_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:343:in `with_around_example_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:474:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:614:in `run_around_example_hooks_for'\nkernel/bootstrap/proc.rb:20:in `call'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:247:in `run (call)'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-rails-3.2.2/lib/rspec/rails/adapters.rb:126:in `__script__'\nkernel/common/eval.rb:101:in `instance_exec'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:333:in `instance_exec'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:387:in `execute_with'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:616:in `run_around_example_hooks_for'\nkernel/bootstrap/proc.rb:20:in `call'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:247:in `call'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:615:in `run_around_example_hooks_for'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:474:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:343:in `with_around_example_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:385:in `with_around_and_singleton_context_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:174:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:549:in `run_examples'\nkernel/bootstrap/array.rb:97:in `map'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:545:in `run_examples'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:512:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:513:in `run'\nkernel/bootstrap/array.rb:97:in `map'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:513:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:513:in `run'\nkernel/bootstrap/array.rb:97:in `map'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:513:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:110:in `run_specs'\nkernel/bootstrap/array.rb:97:in `map'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:110:in `run_specs'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/configuration.rb:1526:in `with_suite_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:109:in `run_specs'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/reporter.rb:62:in `report'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:108:in `run_specs'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:86:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:70:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:38:in `invoke'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/exe/rspec:4:in `__script__'\nkernel/common/kernel.rb:497:in `load'\n/home/nigel/.rvm/gems/rbx-2.5.2/bin/rspec:23:in `__script__'\nkernel/common/block_environment.rb:53:in `call_on_instance'\nkernel/common/eval.rb:176:in `eval'\n/home/nigel/.rvm/gems/rbx-2.5.2/bin/ruby_executable_hooks:15:in `__script__'\nkernel/delta/code_loader.rb:66:in `load_script'\nkernel/delta/code_loader.rb:152:in `load_script'\nkernel/loader.rb:655:in `script'\nkernel/loader.rb:809:in `main'"], ["warnable_id", 1], ["warnable_type", "TestObject"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "test_objects" ("name") VALUES (?)[0m  [["name", "bill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "warnings" ("source", "message", "warnable_id", "warnable_type") VALUES (?, ?, ?, ?)  [["source", "acts_as_warnable_spec"], ["message", "Oh snap!!"], ["warnable_id", 1], ["warnable_type", "TestObject"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mWarning Exists (0.2ms)[0m  SELECT  1 AS one FROM "warnings" WHERE "warnings"."message" = ? LIMIT 1  [["message", "Oh snap!!"]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "test_objects" ("name") VALUES (?)  [["name", "bill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "warnings" ("source", "message", "warnable_id", "warnable_type") VALUES (?, ?, ?, ?)[0m  [["source", "acts_as_warnable_spec"], ["message", "Oh snap!!"], ["warnable_id", 1], ["warnable_type", "TestObject"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'mrmcuser1@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "mrmcuser1@example.com"], ["encrypted_password", "$2a$04$zkcOiXQPfG.WJCy9Rflh9OfzsxTi4MSKsVqjf4vbX8STSADeu/TwG"], ["created_at", "2015-06-10 16:06:39.587257"], ["updated_at", "2015-06-10 16:06:39.587257"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "warnings" SET "dismisser_id" = ?, "dismissed_at" = ? WHERE "warnings"."id" = ?[0m  [["dismisser_id", 1], ["dismissed_at", "2015-06-10 16:06:39.587257"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'mrmcuser2@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "mrmcuser2@example.com"], ["encrypted_password", "$2a$04$mSIM.SJQBrmsMbA29ouV3OoLYo0JEfp8P6kJphxftIt9vSNwIB74y"], ["created_at", "2015-06-10 16:06:39.692671"], ["updated_at", "2015-06-10 16:06:39.692671"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "warnings" SET "dismisser_id" = ?, "dismissed_at" = ? WHERE "warnings"."id" = ?[0m  [["dismisser_id", 1], ["dismissed_at", "2015-06-10 16:06:39.695604"], ["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ActsAsWarnable::WarningsController#update as HTML
+  Parameters: {"warning"=>{"message"=>""}, "id"=>"1"}
+  [1m[36mWarning Load (0.2ms)[0m  [1mSELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://test.host/warnings
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+  [1m[35mWarning Load (0.1ms)[0m  SELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'mrmcuser3@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "mrmcuser3@example.com"], ["encrypted_password", "$2a$04$kJpwJ..h87lesXfvNXjJyOqZ2/aRgjfPwOX66Bd12KjQlMrrqY8k2"], ["created_at", "2015-06-10 16:06:39.757083"], ["updated_at", "2015-06-10 16:06:39.757083"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActsAsWarnable::WarningsController#update as HTML
+  Parameters: {"warning"=>{"dismisser_id"=>"1"}, "id"=>"1"}
+  [1m[35mWarning Load (0.1ms)[0m  SELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1  [["id", 1]]
+Unpermitted parameter: id
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "warnings" SET "dismisser_id" = ?, "dismissed_at" = ? WHERE "warnings"."id" = ?  [["dismisser_id", 1], ["dismissed_at", "2015-06-10 16:06:39.768448"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://test.host/warnings
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+  [1m[36mWarning Load (0.1ms)[0m  [1mSELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ActsAsWarnable::WarningsController#update as HTML
+  Parameters: {"warning"=>{"message"=>"Dear lord"}, "id"=>"1"}
+  [1m[36mWarning Load (0.1ms)[0m  [1mSELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "warnings" SET "message" = ? WHERE "warnings"."id" = ?[0m  [["message", "Dear lord"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/warnings
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+  [1m[36mWarning Load (0.1ms)[0m  [1mSELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActsAsWarnable::WarningsController#index as HTML
+  Rendered /home/nigel/r/acts_as_warnable/app/views/acts_as_warnable/warnings/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 27ms (Views: 26.5ms | ActiveRecord: 0.0ms)
+  [1m[35mWarning Load (0.2ms)[0m  SELECT "warnings".* FROM "warnings"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "test_objects" ("name") VALUES (?)[0m  [["name", "bob"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "warnings" SET "warnable_id" = ?, "warnable_type" = ? WHERE "warnings"."id" = ?[0m  [["warnable_id", 1], ["warnable_type", "TestObject"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ActsAsWarnable::WarningsController#index as HTML
+  Parameters: {"warnable_id"=>"1", "warnable_type"=>"TestObject"}
+  [1m[36mTestObject Load (0.2ms)[0m  [1mSELECT  "test_objects".* FROM "test_objects" WHERE "test_objects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered /home/nigel/r/acts_as_warnable/app/views/acts_as_warnable/warnings/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 17ms (Views: 10.6ms | ActiveRecord: 0.2ms)
+  [1m[35mWarning Load (0.2ms)[0m  SELECT "warnings".* FROM "warnings" WHERE "warnings"."warnable_id" = ? AND "warnings"."warnable_type" = ?  [["warnable_id", 1], ["warnable_type", "TestObject"]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (11.0ms)[0m  [1mCREATE TABLE "test_objects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar) [0m
+  [1m[35m (22.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (15.1ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (15.3ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (15.4ms)[0m  [1mCREATE TABLE "warnings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "warnable_id" integer, "warnable_type" varchar, "source" varchar, "message" text, "dismissed_at" datetime, "dismisser_id" integer) [0m
+  [1m[35m (21.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (15.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (7.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150609185646')[0m
+  [1m[35m (14.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150608162748')
+  [1m[36m (13.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150608181855')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'mrmcuser1@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "mrmcuser1@example.com"], ["encrypted_password", "$2a$04$fv5mw.1WvWLmfj8Ig1hK2ezs5ZoAGEPUit2HAef667H4NmAkWmAX."], ["created_at", "2015-06-10 16:07:16.573887"], ["updated_at", "2015-06-10 16:07:16.573887"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "warnings" SET "dismisser_id" = ?, "dismissed_at" = ? WHERE "warnings"."id" = ?  [["dismisser_id", 1], ["dismissed_at", "2015-06-10 16:07:16.573887"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'mrmcuser2@example.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "mrmcuser2@example.com"], ["encrypted_password", "$2a$04$ly9/snFXA.QpSTI1xT1xAu0GDMnYuZ2eHmDTNdu7QEdUTu6nqOPvG"], ["created_at", "2015-06-10 16:07:16.758100"], ["updated_at", "2015-06-10 16:07:16.758100"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "warnings" SET "dismisser_id" = ?, "dismissed_at" = ? WHERE "warnings"."id" = ?  [["dismisser_id", 1], ["dismissed_at", "2015-06-10 16:07:16.760887"], ["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "test_objects" ("name") VALUES (?)[0m  [["name", "bob"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "warnings" SET "warnable_id" = ?, "warnable_type" = ? WHERE "warnings"."id" = ?[0m  [["warnable_id", 1], ["warnable_type", "TestObject"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ActsAsWarnable::WarningsController#index as HTML
+  Parameters: {"warnable_id"=>"1", "warnable_type"=>"TestObject"}
+  [1m[36mTestObject Load (0.2ms)[0m  [1mSELECT  "test_objects".* FROM "test_objects" WHERE "test_objects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered /home/nigel/r/acts_as_warnable/app/views/acts_as_warnable/warnings/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 40ms (Views: 24.2ms | ActiveRecord: 0.2ms)
+  [1m[35mWarning Load (0.3ms)[0m  SELECT "warnings".* FROM "warnings" WHERE "warnings"."warnable_id" = ? AND "warnings"."warnable_type" = ?  [["warnable_id", 1], ["warnable_type", "TestObject"]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ActsAsWarnable::WarningsController#index as HTML
+  Rendered /home/nigel/r/acts_as_warnable/app/views/acts_as_warnable/warnings/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+  [1m[36mWarning Load (0.1ms)[0m  [1mSELECT "warnings".* FROM "warnings"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ActsAsWarnable::WarningsController#update as HTML
+  Parameters: {"warning"=>{"message"=>"Dear lord"}, "id"=>"1"}
+  [1m[36mWarning Load (0.2ms)[0m  [1mSELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "warnings" SET "message" = ? WHERE "warnings"."id" = ?[0m  [["message", "Dear lord"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/warnings
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+  [1m[36mWarning Load (0.2ms)[0m  [1mSELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warnings" ("source", "message") VALUES (?, ?)[0m  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'mrmcuser3@example.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "mrmcuser3@example.com"], ["encrypted_password", "$2a$04$oChPeutKrqanY80wcR2e3O5adJuz5C1kh3kMuCedS39J4cN0FJs/i"], ["created_at", "2015-06-10 16:07:16.976108"], ["updated_at", "2015-06-10 16:07:16.976108"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ActsAsWarnable::WarningsController#update as HTML
+  Parameters: {"warning"=>{"dismisser_id"=>"1"}, "id"=>"1"}
+  [1m[36mWarning Load (0.1ms)[0m  [1mSELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "warnings" SET "dismisser_id" = ?, "dismissed_at" = ? WHERE "warnings"."id" = ?[0m  [["dismisser_id", 1], ["dismissed_at", "2015-06-10 16:07:16.982306"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://test.host/warnings
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+  [1m[35mWarning Load (0.1ms)[0m  SELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warnings" ("source", "message") VALUES (?, ?)  [["source", "FactoryGirl"], ["message", "This is a just drill"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActsAsWarnable::WarningsController#update as HTML
+  Parameters: {"warning"=>{"message"=>""}, "id"=>"1"}
+  [1m[35mWarning Load (0.1ms)[0m  SELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1  [["id", 1]]
+Unpermitted parameter: id
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Redirected to http://test.host/warnings
+Completed 302 Found in 10ms (ActiveRecord: 0.3ms)
+  [1m[36mWarning Load (0.1ms)[0m  [1mSELECT  "warnings".* FROM "warnings" WHERE "warnings"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "test_objects" ("name") VALUES (?)[0m  [["name", "bill"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "warnings" ("source", "message", "warnable_id", "warnable_type") VALUES (?, ?, ?, ?)  [["source", "acts_as_warnable_spec"], ["message", "Oh snap!!"], ["warnable_id", 1], ["warnable_type", "TestObject"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mWarning Exists (0.2ms)[0m  SELECT  1 AS one FROM "warnings" WHERE "warnings"."message" = ? LIMIT 1  [["message", "Oh snap!!"]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "test_objects" ("name") VALUES (?)  [["name", "bill"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "warnings" ("source", "message", "warnable_id", "warnable_type") VALUES (?, ?, ?, ?)[0m  [["source", "acts_as_warnable_spec"], ["message", "Oh snap!!"], ["warnable_id", 1], ["warnable_type", "TestObject"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "test_objects" ("name") VALUES (?)  [["name", "jim"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "warnings" WHERE "warnings"."warnable_id" = ? AND "warnings"."warnable_type" = ?  [["warnable_id", 1], ["warnable_type", "TestObject"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "warnings" ("source", "message", "warnable_id", "warnable_type") VALUES (?, ?, ?, ?)  [["source", "TestObject#test_method"], ["message", "RuntimeError: Oh, no!\n\n/home/nigel/r/acts_as_warnable/spec/lib/acts_as_warnable_spec.rb:15:in `test_method_without_warning (test_method)'\n/home/nigel/r/acts_as_warnable/lib/acts_as_warnable.rb:26:in `warn_on_failure_of'\n/home/nigel/r/acts_as_warnable/spec/lib/acts_as_warnable_spec.rb:25:in `__script__'\nkernel/bootstrap/proc.rb:20:in `call'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/matchers/built_in/raise_error.rb:43:in `matches?'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/matchers/built_in/raise_error.rb:62:in `does_not_match?'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/handler.rb:78:in `does_not_match?'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/handler.rb:72:in `handle_matcher'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/handler.rb:27:in `with_matcher'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/handler.rb:70:in `handle_matcher'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/expectation_target.rb:67:in `not_to'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-expectations-3.2.1/lib/rspec/expectations/expectation_target.rb:92:in `to_not (not_to)'\n/home/nigel/r/acts_as_warnable/spec/lib/acts_as_warnable_spec.rb:25:in `__script__'\nkernel/common/eval.rb:101:in `instance_exec'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:177:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:385:in `with_around_and_singleton_context_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:343:in `with_around_example_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:474:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:614:in `run_around_example_hooks_for'\nkernel/bootstrap/proc.rb:20:in `call'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:247:in `run (call)'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-rails-3.2.2/lib/rspec/rails/adapters.rb:126:in `__script__'\nkernel/common/eval.rb:101:in `instance_exec'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:333:in `instance_exec'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:387:in `execute_with'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:616:in `run_around_example_hooks_for'\nkernel/bootstrap/proc.rb:20:in `call'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:247:in `call'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:615:in `run_around_example_hooks_for'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/hooks.rb:474:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:343:in `with_around_example_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:385:in `with_around_and_singleton_context_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example.rb:174:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:549:in `run_examples'\nkernel/bootstrap/array.rb:97:in `map'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:545:in `run_examples'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:512:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:513:in `run'\nkernel/bootstrap/array.rb:97:in `map'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:513:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:513:in `run'\nkernel/bootstrap/array.rb:97:in `map'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/example_group.rb:513:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:110:in `run_specs'\nkernel/bootstrap/array.rb:97:in `map'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:110:in `run_specs'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/configuration.rb:1526:in `with_suite_hooks'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:109:in `run_specs'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/reporter.rb:62:in `report'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:108:in `run_specs'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:86:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:70:in `run'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/lib/rspec/core/runner.rb:38:in `invoke'\n/home/nigel/.rvm/gems/rbx-2.5.2/gems/rspec-core-3.2.3/exe/rspec:4:in `__script__'\nkernel/common/kernel.rb:497:in `load'\n/home/nigel/.rvm/gems/rbx-2.5.2/bin/rspec:23:in `__script__'\nkernel/common/block_environment.rb:53:in `call_on_instance'\nkernel/common/eval.rb:176:in `eval'\n/home/nigel/.rvm/gems/rbx-2.5.2/bin/ruby_executable_hooks:15:in `__script__'\nkernel/delta/code_loader.rb:66:in `load_script'\nkernel/delta/code_loader.rb:152:in `load_script'\nkernel/loader.rb:655:in `script'\nkernel/loader.rb:809:in `main'"], ["warnable_id", 1], ["warnable_type", "TestObject"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "test_objects" ("name") VALUES (?)[0m  [["name", "jim"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m

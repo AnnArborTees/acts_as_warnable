@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = ActsAsWarnable::VERSION
   s.authors     = ["Nigel Baillie"]
   s.email       = ["metreckk@gmail.com"]
-  s.homepage    = "TODO"
+  # s.homepage    = "TODO"
   s.summary     = "Allows models to issue warnings if a task goes wrong"
   s.description = "Allows models to issue warnings if a task goes wrong"
   s.license     = "MIT"

@@ -86,7 +86,7 @@ warn_on_failure_of :important_task, raise_anyway: true
 ### Dismissal
 
 Warnings can also be "dismissed" by users of your app. As of right now, ActsAsWarnable
-depends on Devise, and the warning dismisser_id refers to the first Devise mapping in
+depends on [Devise](https://github.com/plataformatec/devise), and the warning dismisser_id refers to the first Devise mapping in
 your app. This is not the best style and can certainly be more extensible, but it fits
 our purposes just fine for now (feel free to change it and pull request if it doesn't fit yours).
 

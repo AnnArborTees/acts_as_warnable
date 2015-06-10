@@ -76,8 +76,10 @@ end
 ```
 
 Now, if `important_task` ever raises an error, it will issue a warning with a source
-of "TestObject#important_task" and the message will be "<error class>: <error message>".
-If you want the error to still be raised, this might interest you:
+of "TestObject#important_task" and the message will be
+"&lt;error class&gt;: &lt;error message&gt; &lt;backtrace&gt;".
+Since warn_on_failure_of will be catching the error, it won't get raised. That might not be a problem,
+but if you'd rather the error get re-thrown, you can do this:
 
 ```ruby
 warn_on_failure_of :important_task, raise_anyway: true

@@ -85,8 +85,8 @@ activity (if applicable) with a key of "warning.dismiss".
 
 There are also route helpers. In your config/routes.rb:
 ```ruby
-resources :my_model # <- not necessary, just for example's sake
-warning_paths_for :my_model
+resources :my_models # <- not necessary, just for example's sake
+warning_paths_for :my_models
 ```
 
 That will give you access to `my_model_warnings_path(some_instance_of_my_model.id)`.

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    acts_as_warnable (0.0.1)
+    acts_as_warnable (0.0.2)
       devise
       rails (~> 4.2.1)
 
@@ -43,7 +43,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    arel (6.0.0)
+    arel (6.0.2)
     bcrypt (3.1.10)
     builder (3.2.2)
     devise (3.5.1)
@@ -126,7 +126,7 @@ GEM
       activesupport (>= 3.0.0)
     sprockets (3.2.0)
       rack (~> 1.0)
-    sprockets-rails (2.3.1)
+    sprockets-rails (2.3.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)

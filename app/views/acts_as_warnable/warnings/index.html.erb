@@ -23,6 +23,9 @@
 <ul>
   <% @warnings.each do |warning| %>
     <li>
+      <% if warning.respond_to?(:created_at) && warning.created_at %>
+        (<%= warning.created_at %>)
+      <% end %>
       <%= link_to "##{warning.id}: (#{warning.source}) #{warning.message.truncate(50)}", ActsAsWarnable::Engine.routes.url_helpers.warning_path(warning) %>
       <% if warning.dismissed? %>
         <%= "(dismissed by #{warning.dismisser.try(:full_name) || warning.dismisser.try(:email)} on #{warning.dismissed_at.strftime('%c')})" if warning.dismissed? %>

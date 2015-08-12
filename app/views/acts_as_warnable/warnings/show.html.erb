@@ -1,5 +1,5 @@
 <h1>Warning #<%= @warning.id %> (<%= @warning.source %>) from <%= link_to "#{@warning.warnable_type.underscore.humanize} ##{@warning.warnable_id}", @warning.warnable %></h1>
-<% if warning.respond_to?(:created_at) && warning.created_at %>
+<% if @warning.respond_to?(:created_at) && @warning.created_at %>
   (<%= warning.created_at %>)
 <% end %>
 <div class='row'>

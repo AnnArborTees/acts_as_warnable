@@ -2,10 +2,12 @@
 <% if @warning.respond_to?(:created_at) && @warning.created_at %>
   (<%= warning.created_at %>)
 <% end %>
-<div class='row'>
-  <%= @warning.message %>
+<div class='well'>
+  <% @warning.message.each_line do |line| %>
+    <p style='word-wrap: break-word'><%= line %></p>
+  <% end %>
 </div>
-<div class='row'>
+<div class=''>
   <% if @warning.dismissed? %>
     Dismissed by <%= @warning.dismisser.try(:full_name) || @warning.dismisser.try(:email) || 'someone' %>
     on <%= @warning.dismissed_at.strftime('%c') %>

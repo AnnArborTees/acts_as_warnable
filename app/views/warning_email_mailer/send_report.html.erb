@@ -1,0 +1,26 @@
+<h3>The following warnings have not been dismissed</h3>
+
+<% if @site_url.blank? %>
+  <p>(Set ENV["SITE_URL"] to have these list entries link to their warning page for dismissal.)</p>
+<% end %>
+
+<ul>
+  <% @warnings.each do |warning| %>
+    <li>
+      <ul>
+        <li>
+          <% if @site_url.blank? %>
+            <span>#<%= warning.id %>: (<%= warning.source %>)</span>
+          <% else %>
+            <%= link_to "##{warning.id}: (#{warning.source})", @site_url + ActsAsWarnable::Engine.routes.url_helpers.warning_path(warning.id) %>
+          <% end %>
+        </li>
+        <li>
+          <% warning.message.each_line do |line| %>
+            <p style='word-wrap: break-word'><%= line %></p>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+  <% end %>
+</ul>

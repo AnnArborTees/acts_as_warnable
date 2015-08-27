@@ -7,7 +7,7 @@ class WarningEmail < ActiveRecord::Base
   end
 
   def send_report
-    WarningEmailMailer.send_report(self)
+    WarningEmailMailer.send_report(self, warnings).deliver
   end
 
   private

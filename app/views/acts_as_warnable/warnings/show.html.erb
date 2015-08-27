@@ -9,7 +9,7 @@
 </div>
 <div class=''>
   <% if @warning.dismissed? %>
-    Dismissed by <%= @warning.dismisser.try(:full_name) || @warning.dismisser.try(:email) || 'someone' %>
+    Dismissed by <%= @warning.dismisser.try(:full_name) || @warning.dismisser.try(:email) || 'nobody' %>
     on <%= @warning.dismissed_at.strftime('%c') %>
   <% else %>
     <%= button_to_dismiss_warning(@warning) %>

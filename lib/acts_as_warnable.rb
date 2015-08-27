@@ -5,9 +5,6 @@ require 'acts_as_warnable/rails/routes'
 module ActsAsWarnable
   extend ActiveSupport::Concern
 
-  included do
-  end
-
   module ClassMethods
     def acts_as_warnable(options = {})
       has_many :warnings, as: :warnable

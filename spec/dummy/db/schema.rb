@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150609185646) do
+ActiveRecord::Schema.define(version: 20150827210238) do
 
   create_table "test_objects", force: :cascade do |t|
     t.string "name"
@@ -35,6 +35,13 @@ ActiveRecord::Schema.define(version: 20150609185646) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
+  create_table "warning_emails", force: :cascade do |t|
+    t.string  "model"
+    t.decimal "minutes",   precision: 10, scale: 2
+    t.string  "recipient"
+    t.string  "url"
+  end
+
   create_table "warnings", force: :cascade do |t|
     t.integer  "warnable_id"
     t.string   "warnable_type"
@@ -42,6 +49,8 @@ ActiveRecord::Schema.define(version: 20150609185646) do
     t.text     "message"
     t.datetime "dismissed_at"
     t.integer  "dismisser_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

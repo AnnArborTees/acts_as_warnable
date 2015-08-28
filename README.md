@@ -108,3 +108,10 @@ That will give you access to `my_model_warnings_path(some_instance_of_my_model.i
 There is a default index.html.erb for warnings, but if you want one specific to your
 model, you can create `app/views/my_model/warnings.html.erb` and that will be rendered
 instead. Within that view, you will have access to `@warnings` and `@my_model`.
+
+### Warning Emails
+
+If you're interested in receiving notifications when there are warnings on a certain model,
+you can configure warning emails by visiting `<acts_as_warnable root>/warning_emails`. Additionally,
+to have the app actually send emails, run:
+    rails generate acts_as_warnable:email_thread

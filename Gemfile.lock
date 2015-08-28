@@ -1,8 +1,9 @@
 PATH
   remote: .
   specs:
-    acts_as_warnable (0.0.4)
+    acts_as_warnable (0.1.0)
       devise
+      inherited_resources
       rails (~> 4.2.1)
 
 GEM
@@ -46,6 +47,9 @@ GEM
     arel (6.0.3)
     bcrypt (3.1.10)
     builder (3.2.2)
+    byebug (5.0.0)
+      columnize (= 0.9.0)
+    columnize (0.9.0)
     devise (3.5.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -62,7 +66,15 @@ GEM
       railties (>= 3.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    has_scope (0.6.0)
+      actionpack (>= 3.2, < 5)
+      activesupport (>= 3.2, < 5)
     i18n (0.7.0)
+    inherited_resources (1.6.0)
+      actionpack (>= 3.2, < 5)
+      has_scope (~> 0.6.0.rc)
+      railties (>= 3.2, < 5)
+      responders
     json (1.8.3)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
@@ -143,6 +155,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_warnable!
+  byebug
   factory_girl_rails (>= 4.2.0)
   rspec-rails (~> 3.0)
   rubinius-debugger

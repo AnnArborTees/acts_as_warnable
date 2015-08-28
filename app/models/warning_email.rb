@@ -11,13 +11,15 @@ class WarningEmail < ActiveRecord::Base
   end
 
   def self.spawn_sender_thread
-    Thread.new do
+    Thread.main[:warning_email_sender] = Thread.new do
       loop do
         begin
           warning_times = {}
 
           min_wait_time = 600
           WarningEmail.find_each do |warning_email|
+            next if warning_email.minutes.blank?
+
             warning_times[warning_email.id] ||= Time.now.to_i
             wait_time = warning_email.minutes * 60.0 - (Time.now.to_i - warning_times[warning_email.id])
 

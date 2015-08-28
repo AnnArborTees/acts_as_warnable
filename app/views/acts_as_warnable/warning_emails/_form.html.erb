@@ -1,0 +1,19 @@
+<%= link_to 'List', ActsAsWarnable::Engine.routes.url_helpers.warning_emails_path, class: 'btn btn-sm btn-primary' %>
+
+<%= form_for warning_email do |f| %>
+  <%= f.label :model, class: 'control-label' %>
+  <%= f.select :model, options_for_select(warnable_classes.map(&:name), f.object.try(:model)), {}, class: 'form-control' %>
+
+  <%= f.label :recipient, class: 'control-label' %>
+  <%= f.text_field :recipient, class: 'form-control' %>
+
+  <%= f.label :minutes, 'Send Every', class: 'control-label' %>
+  <div class='input-group'>
+    <%= f.text_field :minutes, class: 'form-control' %>
+    <span class='input-group-addon'>
+      minutes
+    </span>
+  </div>
+
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>

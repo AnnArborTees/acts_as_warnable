@@ -1,0 +1,37 @@
+<h1>Warning Emails</h1>
+
+<dl>
+  <dt>Dispatcher Thread Status</dt>
+  <dd><%= Thread.main[:warning_email_sender].try(:status).try(:humanize) || '<em>Not Running</em>'.html_safe %></dd>
+</dl>
+
+<%= link_to 'New Warning Email', ActsAsWarnable::Engine.routes.url_helpers.new_warning_email_path, class: 'btn btn-primary' %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Recipient</th>
+      <th>Send Interval</th>
+      <th>Actions</th>
+    </tr>
+
+    <tbody>
+      <% @warning_emails.each do |warning_email| %>
+        <tr>
+          <td><%= warning_email.model %></td>
+          <td><%= warning_email.recipient %></td>
+          <td><%= warning_email.minutes || '<not set>' %> minutes</td>
+          <td>
+            <%= link_to(ActsAsWarnable::Engine.routes.url_helpers.edit_warning_email_path(warning_email), data: { toggle: 'tooltip' }, class: 'btn btn-xs btn-warning', title: 'Edit') do %>
+              <%= content_tag :i, '', class: 'glyphicon glyphicon-edit' %>
+            <% end %>
+            <%= link_to(warning_email, method: :delete, data: { toggle: 'tooltip' }, class: 'btn btn-xs btn-danger', title: 'Destroy') do %>
+              <%= content_tag :i, '', class: 'glyphicon glyphicon-remove-circle' %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </thead>
+</table>

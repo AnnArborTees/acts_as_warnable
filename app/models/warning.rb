@@ -15,9 +15,7 @@ class Warning < ActiveRecord::Base
   before_save :check_if_dismissed
   after_save :fire_dismissal_activity, if: :just_dismissed?
 
-  def self.active
-    where(dismissed_at: nil)
-  end
+  scope :active, -> { where(dismissed_at: nil) }
 
   def dismiss(user)
     update_attributes dismissed_at: Time.now, dismisser: user

@@ -19,6 +19,7 @@ module ActsAsWarnable
 
       if params.key?(:warnable_id) && params.key?(:warnable_type)
         @warnings = @warnings.where(warnable_id: params[:warnable_id], warnable_type: params[:warnable_type])
+        paginate_if_possible
 
         @warnable = params[:warnable_type].constantize.find(params[:warnable_id])
         instance_variable_set('@'+params[:warnable_type].underscore, @warnable)
@@ -27,6 +28,8 @@ module ActsAsWarnable
         if lookup_context.exists?('warnings', warnables, false)
           render "#{warnables}/warnings"
         end
+      else
+        paginate_if_possible
       end
     end
 
@@ -54,6 +57,13 @@ module ActsAsWarnable
     end
 
     protected
+
+    def paginate_if_possible
+      if Warning.column_names.include?('created_at')
+        @warnings = @warnings.order('created_at desc')
+      end
+      @warnings = @warnings.page(params[:page] || 1) if @warnings.respond_to?(:page)
+    end
 
     def fetch_warning
       @warning = Warning.find(params[:id])

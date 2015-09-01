@@ -5,10 +5,14 @@ module ActsAsWarnable
     end
 
     def button_to_dismiss_warning(warning, options = {})
-      form_for(warning, options) do |f|
+      options[:class] ||= ''
+      options[:class] += ' btn btn-warning'
+      options[:text] ||= 'Dismiss'
+
+      form_for(warning) do |f|
         f.hidden_field(:dismisser_id, value: current_devise_user.id) +
           hidden_field_tag(:redirect_to, request.fullpath) +
-          f.submit('Dismiss', class: 'btn btn-warning')
+          button_tag(options.delete(:text), options)
       end
     end
   end

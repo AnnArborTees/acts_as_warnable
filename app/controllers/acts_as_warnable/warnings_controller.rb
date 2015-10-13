@@ -3,7 +3,7 @@ module ActsAsWarnable
     before_filter :fetch_warning, only: [:update, :show]
     respond_to :html, :js
 
-    helper do
+    helper ActsAsWarnable::Engine.helpers do
       def method_missing(name, *args, &block)
         if main_app.respond_to?(name)
           main_app.send(name, *args, &block)

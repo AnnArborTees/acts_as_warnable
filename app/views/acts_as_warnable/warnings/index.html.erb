@@ -40,7 +40,7 @@
       <% @warnings.each do |warning| %>
         <tr>
           <% if Warning.column_names.include?("created_at") %>
-            <td><%= warning.created_at.strftime('%m/%d/%Y %I:%M%p') %></td>
+            <td><%= warning.created_at.try(:strftime, '%m/%d/%Y %I:%M%p') || '<unknown>' %></td>
           <% end %>
           <td><%= warning.warnable_type.underscore.humanize %></td>
           <td><%= warning.warnable_id %></td>

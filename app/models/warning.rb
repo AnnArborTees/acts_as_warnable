@@ -1,6 +1,6 @@
 class Warning < ActiveRecord::Base
   def self.dismisser_class
-    @dismisser ||= ENV['DISMISSER_CLASS'].try(:constantize) : User
+    @dismisser ||= ENV['DISMISSER_CLASS'].try(:constantize) || User
   end
 
   belongs_to :warnable, polymorphic: true

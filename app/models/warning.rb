@@ -7,7 +7,7 @@ class Warning < ActiveRecord::Base
 
   if defined? Softwear::Auth::BelongsToUser
     include Softwear::Auth::BelongsToUser
-    belongs_to_user_as :dismisser
+    belongs_to_user_called :dismisser
   else
     belongs_to :dismisser, class_name: dismisser_class
   end

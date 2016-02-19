@@ -1,7 +1,11 @@
 module ActsAsWarnable
   module ApplicationHelper
     def current_devise_user
-      send("current_#{Devise.mappings.values.first.name.to_s.underscore.singularize}")
+      begin
+        send("current_#{Devise.mappings.values.first.name.to_s.underscore.singularize}")
+      rescue NoMethodError => e
+        current_user
+      end
     end
 
     def button_to_dismiss_warning(warning, options = {})

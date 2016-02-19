@@ -4,7 +4,13 @@ class Warning < ActiveRecord::Base
   end
 
   belongs_to :warnable, polymorphic: true
-  belongs_to :dismisser, class_name: dismisser_class
+
+  if defined? Softwear::Auth::BelongsToUser
+    include Softwear::Auth::BelongsToUser
+    belongs_to_user_as :dismisser
+  else
+    belongs_to :dismisser, class_name: dismisser_class
+  end
 
   validates :message, :source, presence: true
 

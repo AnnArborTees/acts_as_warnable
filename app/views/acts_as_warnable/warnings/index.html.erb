@@ -6,18 +6,34 @@
   <h1>Warnings</h1>
 <% end %>
 
-<% if params[:active_only] %>
-  <% if params[:warnable_type] %>
-    <%= link_to "Show dismissed", send("#{params[:warnable_type].underscore}_warnings_path", params[:warnable_id]), { class: 'btn btn-info' } %>
-  <% else %>
-    <%= link_to "Show dismissed", ActsAsWarnable::Engine.routes.url_helpers.warnings_path, { class: 'btn btn-info' } %>
-  <% end %>
-<% else %>
-  <% if params[:warnable_type] %>
-    <%= link_to "Hide dismissed", send("#{params[:warnable_type].underscore}_warnings_path", params[:warnable_id], active_only: true), { class: 'btn btn-info' } %>
-  <% else %>
-    <%= link_to "Hide dismissed", ActsAsWarnable::Engine.routes.url_helpers.warnings_path(active_only: true), { class: 'btn btn-info' } %>
-  <% end %>
+<h3>Search Warnings</h3>
+
+<%
+if params[:warnable_type]
+  form_action = send("#{params[:warnable_type].underscore}_warnings_path")
+else
+  form_action = ActsAsWarnable::Engine.routes.url_helpers.warnings_path
+end
+%>
+
+<%= form_tag form_action, method: :get do %>
+<div class="row">
+    <div class="col-xs-3">
+      <%= label_tag :active_only, "Active" %>
+      <%= select_tag :active_only,
+                     options_for_select( [["", ""], ["Yes", true], ["No", false]], params[:active_only] ),
+                     { class: 'form-control select2' } %>
+    </div>
+  <div class="col-xs-9">
+    <%= label_tag :source, "Source" %>
+    <%= select_tag :source,
+                   options_for_select(@warning_sources, params[:source]),
+                   { class: 'form-control select2', multiple: true } %>
+  </div>
+  <div class="col-xs-12">
+    <%= submit_tag "Search", class: 'btn btn-primary clearfix clear' %>
+  </div>
+</div>
 <% end %>
 
 <div>

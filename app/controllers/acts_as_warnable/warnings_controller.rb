@@ -1,6 +1,8 @@
 module ActsAsWarnable
   class WarningsController < ::ApplicationController
     before_filter :fetch_warning, only: [:update, :show]
+    before_filter :populate_search_options, only: [:index]
+
     respond_to :html, :js
 
     helper ActsAsWarnable::Engine.helpers do
@@ -14,23 +16,7 @@ module ActsAsWarnable
     end
 
     def index
-      @warnings = Warning.all
-      @warnings = @warnings.active if params[:active_only]
-
-      if params.key?(:warnable_id) && params.key?(:warnable_type)
-        @warnings = @warnings.where(warnable_id: params[:warnable_id], warnable_type: params[:warnable_type])
-        paginate_if_possible
-
-        @warnable = params[:warnable_type].constantize.find(params[:warnable_id])
-        instance_variable_set('@'+params[:warnable_type].underscore, @warnable)
-
-        warnables = params[:warnable_type].underscore.pluralize
-        if lookup_context.exists?('warnings', warnables, false)
-          render "#{warnables}/warnings"
-        end
-      else
-        paginate_if_possible
-      end
+      search_warnings
     end
 
     def update
@@ -57,6 +43,32 @@ module ActsAsWarnable
     end
 
     protected
+
+    def populate_search_options
+      @warning_sources = Warning.group(:source).map(&:source)
+    end
+
+    def search_warnings
+      @warnings = Warning.all
+      @warnings = @warnings.active if (params.key?(:active_only) && params[:active_only] == 'true')
+      @warnings = @warnings.inactive if (params.key?(:active_only) && params[:active_only] == 'false')
+      @warnings = @warnings.where(source: params[:source]) unless params[:source].blank?
+
+      if params.key?(:warnable_id) && params.key?(:warnable_type)
+        @warnings = @warnings.where(warnable_id: params[:warnable_id], warnable_type: params[:warnable_type])
+        paginate_if_possible
+
+        @warnable = params[:warnable_type].constantize.find(params[:warnable_id])
+        instance_variable_set('@'+params[:warnable_type].underscore, @warnable)
+
+        warnables = params[:warnable_type].underscore.pluralize
+        if lookup_context.exists?('warnings', warnables, false)
+          render "#{warnables}/warnings"
+        end
+      else
+        paginate_if_possible
+      end
+    end
 
     def paginate_if_possible
       if Warning.column_names.include?('created_at')

@@ -18,6 +18,7 @@ class Warning < ActiveRecord::Base
   after_save :fire_dismissal_activity, if: :just_dismissed?
 
   scope :active, -> { where(dismissed_at: nil) }
+  scope :inactive, -> { where.not(dismissed_at: nil) }
 
   def dismiss(user)
     update_attributes dismissed_at: Time.now, dismisser: user

@@ -1,0 +1,11 @@
+Software error: <%= error.class.name %>
+------------------------
+
+This is either a bug or a server error.
+**If you don't know why you got this, contact devteam before dismissing.**
+
+##### <%= error.message %>
+
+<% error.backtrace.each do |filename| %>
+* <%= filename.gsub("'", "`") %>
+<% end %>

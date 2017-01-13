@@ -26,7 +26,9 @@ module ActsAsWarnable
           rescue Exception => e
             issue_warning(
               warning_source(method_name),
-              "#{e.class.name}: #{e.message}\n\n#{e.backtrace.join("\n")}"
+              view_path: ActsAsWarnable::Engine.root.join('app/views'),
+              render: "acts_as_warnable/warnings/rescued_error",
+              params: { error: e }
             )
             raise if options[:raise_anyway]
           end

@@ -44,6 +44,8 @@ module ActsAsWarnable
     end
 
     def issue_warning(source, options_or_message)
+      warning = warnings.create(source: source, message: options_or_message.inspect)
+
       case options_or_message
       when Hash
         opts = options_or_message.with_indifferent_access
@@ -54,12 +56,12 @@ module ActsAsWarnable
 
         view += ".md" unless view =~ /\.md$/
 
-        message = WarningView.new(self, view_path).render(template: view, locals: params)
+        message = WarningView.new(warning, self, view_path).render(template: view, locals: params)
       else
         message = options_or_message.to_s
       end
 
-      warning = warnings.create(source: source, message: message)
+      warning.update_attributes! message: message
 
       if respond_to?(:create_activity)
         create_activity(

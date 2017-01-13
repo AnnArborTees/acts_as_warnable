@@ -3,8 +3,9 @@ module ActsAsWarnable
     # This class defines helpers that can be called within any warning
     # markdown template.
 
-    def initialize(object, path)
-      @warning_object = object
+    def initialize(warning, object, path)
+      @warning = warning
+      @warnable = object
       super(path)
 
       unless object.nil?
@@ -15,7 +16,11 @@ module ActsAsWarnable
     end
 
     def object
-      @warning_object
+      @warnable
+    end
+
+    def warning
+      @warning
     end
   end
 end

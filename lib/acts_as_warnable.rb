@@ -1,6 +1,7 @@
 require 'acts_as_warnable/version'
 require 'acts_as_warnable/engine'
 require 'acts_as_warnable/rails/routes'
+require 'acts_as_warnable/warning_view'
 
 module ActsAsWarnable
   extend ActiveSupport::Concern
@@ -21,6 +22,7 @@ module ActsAsWarnable
         define_method "#{method_name}_with_warning" do |*args, &block|
           begin
             send("#{method_name}_without_warning", *args, &block)
+
           rescue Exception => e
             issue_warning(
               warning_source(method_name),
@@ -39,7 +41,22 @@ module ActsAsWarnable
       "#{self.class.name}##{method_name}"
     end
 
-    def issue_warning(source, message)
+    def issue_warning(source, options_or_message)
+      case options_or_message
+      when Hash
+        opts = options_or_message.with_indifferent_access
+
+        view_path = opts[:view_path] || Rails.configuration.paths["app/views"].first
+        view      = opts[:view]   || opts[:template] || opts[:render]
+        params    = opts[:params] || opts[:locals]   || {}
+
+        view += ".md" unless view =~ /\.md$/
+
+        message = WarningView.new(self, view_path).render(template: view, locals: params)
+      else
+        message = options_or_message.to_s
+      end
+
       warning = warnings.create(source: source, message: message)
 
       if respond_to?(:create_activity)

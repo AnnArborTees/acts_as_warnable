@@ -15,13 +15,29 @@ and run
     bundle install
 
 Next, run
-    rails generate acts_as_warnable:warning
+```bash
+rails generate acts_as_warnable:warning
+```
 to generate the migration for the warning model. Don't forget to
 `rake db:migrate`.
 
 In your routes.rb:
 ```ruby
 mount ActsAsWarnable::Engine => '/'
+```
+
+In application.js:
+```javascript
+//...
+//= require showdown/showdown.js
+//= require acts_as_warnable/warning_markdown.js
+```
+
+In application.css:
+```css
+/*...
+ *= require acts_as_warnable/markdown_style
+ */
 ```
 
 Use
@@ -44,12 +60,20 @@ It also gives it access to a few instance methods, like `issue_warning(source, m
 class TestObject < ActiveRecord::Base
   acts_as_warnable
 
-  def do_stuff
-    ...
+  def do_stuff(something)
+    # ...
     if something_bad_happened
       issue_warning('Test Object doing stuff', 'Something bad happened!!')
     end
-    ...
+    # OR
+    if something_else_bad_happened
+      issue_warning(
+        'Test Object doing stuff',
+
+        render: "test_objects/warning.md",
+        locals: { anything: something }
+      )
+    end
   end
 end
 ```

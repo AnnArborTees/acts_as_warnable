@@ -1,13 +1,21 @@
-<h1>Warning #<%= @warning.id %> (<%= @warning.source %>) from <%= link_to "#{@warning.warnable_type.underscore.humanize} ##{@warning.warnable_id}", @warning.warnable rescue "#{@warning.warnable_type.underscore.humanize} ##{@warning.warnable_id}" %></h1>
-<% if @warning.respond_to?(:created_at) && @warning.created_at %>
+<h1>
+  Warning #<%= @warning.id %> (<%= @warning.source %>)
+  from
+  <%= link_to "#{@warning.warnable_type.underscore.humanize} ##{@warning.warnable_id}", \
+        @warning.warnable \
+        rescue "#{@warning.warnable_type.underscore.humanize} ##{@warning.warnable_id}" %>
+</h1>
+
+<% if @warning.try(:created_at) %>
   (<%= @warning.created_at %>)
 <% end %>
-<div class='well'>
-  <% @warning.message.each_line do |line| %>
-    <p style='word-wrap: break-word'><%= line %></p>
-  <% end %>
-</div>
-<div class=''>
+
+<article class='warning-markdown box-info'>
+<%# This must have no indentation so as to not confuse MD into thinking the first line is a code block %>
+<pre class='md-content'><%= @warning.message %></pre>
+</article>
+
+<div class='warning-dismissed-message'>
   <% if @warning.dismissed? %>
     Dismissed by <%= @warning.dismisser.try(:full_name) || @warning.dismisser.try(:email) || 'nobody' %>
     on <%= @warning.dismissed_at.strftime('%c') %>

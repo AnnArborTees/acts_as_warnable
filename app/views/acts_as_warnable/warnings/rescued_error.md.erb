@@ -7,5 +7,5 @@ This is either a bug or a server error.
 ##### <%= error.message %>
 
 <% error.backtrace.each do |filename| %>
-* <%= filename.gsub("'", "`") %>
+* <%= filename.gsub("'", "`").html_safe %>
 <% end %>

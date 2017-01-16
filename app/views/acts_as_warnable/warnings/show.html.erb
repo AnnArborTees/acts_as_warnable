@@ -6,8 +6,12 @@
         rescue "#{@warning.warnable_type.underscore.humanize} ##{@warning.warnable_id}" %>
 </h1>
 
-<% if @warning.try(:created_at) %>
-  (<%= @warning.created_at %>)
+<% if @warning.try(:created_at).respond_to?(:strftime) %>
+  <h4><%= @warning.created_at.strftime('%b %d, %Y, %I:%M %p') %></h4>
+<% end %>
+
+<% if @warning.dismissed? %>
+  <h1><span class='label label-warning'>Dismissed</span></h1>
 <% end %>
 
 <article class='warning-markdown box-info'>

@@ -14,6 +14,23 @@ module ActsAsWarnable
     end
   end
 
+  def self.inspect_error(e)
+    result = {}
+
+    # Inspect the response of ActiveResource and RestClient errors
+    if (response = e.try(:response))
+      if (code = response.try(:code) and message = response.try(:message))
+        result[:code] = "#{code} #{message}"
+      end
+
+      if (body = response.try(:body))
+        result[:response] = body
+      end
+    end
+
+    result.with_indifferent_access
+  end
+
   module WarnableClassMethods
     def warn_on_failure_of(*methods)
       options = methods.last.is_a?(Hash) ? methods.pop : {}
@@ -28,7 +45,7 @@ module ActsAsWarnable
               warning_source(method_name),
               view_path: ActsAsWarnable::Engine.root.join('app/views'),
               render: "acts_as_warnable/warnings/rescued_error",
-              params: { error: e }
+              params: { error: e, inspection: ActsAsWarnable.inspect_error(e) }
             )
             raise if options[:raise_anyway]
           end

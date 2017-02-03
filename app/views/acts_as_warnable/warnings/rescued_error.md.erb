@@ -8,10 +8,6 @@ This is either a bug or a server error.
 
 ## Technical details
 
-<% error.backtrace.each do |filename| %>
-* <%= filename.gsub("'", "`").html_safe %>
-<% end %>
-
 <% if (response = inspection[:response]) %>
 ### Response
 
@@ -19,11 +15,17 @@ This is either a bug or a server error.
 <%= code %>
 <% end %>
 
-<% if response.is_a?(Hash) %>
 ``` json
-<%= JSON.pretty_generate(response) %>
-```
+<% if response.is_a?(Hash) %>
+<%= JSON.pretty_generate(response).html_safe %>
 <% elsif response.respond_to?(:to_s) %>
-<%= response.to_s.truncate(10000) %>
+<%= response.to_s.truncate(10000).html_safe %>
 <% end %>
+```
+<% end %>
+
+### Backtrace
+
+<% error.backtrace.each do |filename| %>
+* <%= filename.gsub("'", "`").gsub("_", "\\_").html_safe %>
 <% end %>

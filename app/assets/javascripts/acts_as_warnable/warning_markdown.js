@@ -12,7 +12,7 @@ function initializeWarningMarkdown(context) {
 
     // Optional .md-content child
     if (element.find('.md-content'))
-      var content = element.find('.md-content').text();
+      var content = element.find('.md-content').text().trimLeft();
     else
       var content = element.text().trimLeft();
 

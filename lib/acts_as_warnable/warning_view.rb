@@ -6,7 +6,11 @@ module ActsAsWarnable
     def initialize(warning, object, path)
       @warning = warning
       @warnable = object
-      super(path)
+
+      lookup_context = ActionView::LookupContext.new(path)
+      lookup_context.formats = [:md, :html]
+
+      super(lookup_context)
 
       unless object.nil?
         # Define a named accessor for the object,

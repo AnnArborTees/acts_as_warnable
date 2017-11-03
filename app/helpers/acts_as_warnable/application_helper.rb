@@ -15,8 +15,9 @@ module ActsAsWarnable
       options[:class] ||= ''
       options[:class] += ' btn btn-warning'
       options[:text] ||= 'Dismiss'
+      options[:remote] ||= false
 
-      form_for(warning) do |f|
+      form_for warning, remote: options[:remote] do |f|
         f.hidden_field(:dismisser_id, value: current_devise_user.id) +
           hidden_field_tag(:redirect_to, request.fullpath) +
           button_tag(options.delete(:text), options)

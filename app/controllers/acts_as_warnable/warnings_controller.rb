@@ -21,20 +21,34 @@ module ActsAsWarnable
 
     def update
       was_dismissed = @warning.dismissed?
+      
       if @warning.update_attributes(permitted_params[:warning])
         if !was_dismissed && @warning.dismissed?
-          flash[:success] = "Warning dismissed"
+          @flash_msg = "Warning dismissed"
         else
-          flash[:success] = "Successfully updated warning"
+          @flash_msg = "Successfully updated warning"
         end
+        @success = true
       else
-        flash[:error] = "Failed to update warning: #{@warning.errors.full_messages.join(', ')}"
+        @flash_msg = "Failed to update warning: #{@warning.errors.full_messages.join(', ')}"
       end
 
-      if params[:redirect_to]
-        redirect_to params[:redirect_to]
-      else
-        redirect_to warnings_path
+      respond_to do |format|
+        format.html do
+          if @success
+            flash[:success] = @flash_msg
+          else
+            flash[:danger] = @flash_msg
+          end
+          
+          if params[:redirect_to]
+            redirect_to params[:redirect_to]
+          else
+            redirect_to warnings_path
+          end
+        end
+
+        format.js
       end
     end
 

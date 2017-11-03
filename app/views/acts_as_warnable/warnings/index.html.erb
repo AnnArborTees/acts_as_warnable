@@ -38,46 +38,6 @@ end
 
 <div>
   <%= paginate @warnings %>
-
-  <table class='table table-striped'>
-    <thead>
-      <tr>
-        <% if Warning.column_names.include?("created_at") %>
-          <th>Date Issued</th>
-        <% end %>
-        <th>Warnable</th>
-        <th>Warnable ID</th>
-        <th>Warning</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @warnings.each do |warning| %>
-        <tr>
-          <% if Warning.column_names.include?("created_at") %>
-            <td><%= warning.created_at.try(:strftime, '%m/%d/%Y %I:%M%p') || '<unknown>' %></td>
-          <% end %>
-          <td><%= warning.warnable_type.underscore.humanize %></td>
-          <td><%= warning.warnable_id %></td>
-          <td><%= warning.message.truncate(50) %></td>
-          <td>
-
-            <%= link_to warning, data: { toggle: 'tooltip' }, class: 'btn btn-xs btn-success', title: 'Show' do %>
-              <i class='glyphicon glyphicon-eye-open'></i>
-            <% end %>
-
-            <% unless warning.dismissed? %>
-              <%= button_to_dismiss_warning warning, text: '<i class="glyphicon glyphicon-ok"></i>'.html_safe, data: { toggle: 'tooltip' }, class: 'btn btn-xs btn-primary', title: 'Dismiss' do %>
-                <i class='glyphicon glyphicon-eye-open'></i>
-              <% end %>
-            <% end %>
-
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
+  <%= render 'table', warnings: @warnings %>
   <%= paginate @warnings %>
 </div>

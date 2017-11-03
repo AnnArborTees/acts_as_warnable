@@ -1,0 +1,21 @@
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <% if Warning.column_names.include?("created_at") %>
+        <th>Date Issued</th>
+      <% end %>
+      <th>Warnable</th>
+      <th>Warnable ID</th>
+      <th>Warning</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% warnings.each do |warning| %>
+      <tr id="warning-<%= warning.id %>">
+        <%= render 'warning', warning: warning %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

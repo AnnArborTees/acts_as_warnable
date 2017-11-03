@@ -1,0 +1,6 @@
+<% if @success %>
+  $("#warning-<%= @warning.id %>").html("<%= j(render 'warning', warning: @warning) %>");
+  successModal("<%= @flash_msg %>");
+<% else %>
+  errorModal("<%= @flash_msg %>");
+<% end %>

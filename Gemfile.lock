@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    acts_as_warnable (0.4.8)
+    acts_as_warnable (0.4.9)
       inherited_resources
       rails (~> 4.2.1)
 

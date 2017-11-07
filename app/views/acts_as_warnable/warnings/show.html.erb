@@ -1,9 +1,7 @@
 <h1>
   Warning #<%= @warning.id %> (<%= @warning.source %>)
   from
-  <%= link_to "#{@warning.warnable_type.underscore.humanize} ##{@warning.warnable_id}", \
-        @warning.warnable \
-        rescue "#{@warning.warnable_type.underscore.humanize} ##{@warning.warnable_id}" %>
+  <a href="<%= edit_link(@warning) %>"><%= "#{@warning.warnable_type.underscore.humanize} ##{@warning.warnable_id}" %></a>
 </h1>
 
 <% if @warning.try(:created_at).respond_to?(:strftime) %>

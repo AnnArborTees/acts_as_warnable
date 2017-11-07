@@ -23,5 +23,9 @@ module ActsAsWarnable
           button_tag(options.delete(:text), options)
       end
     end
+
+    def edit_link(warning)
+      "/#{warning.warnable_type.underscore.pluralize}/#{warning.warnable.id}/edit"
+    end
   end
 end

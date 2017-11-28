@@ -41,12 +41,7 @@ module ActsAsWarnable
             send("#{method_name}_without_warning", *args, &block)
 
           rescue Exception => e
-            issue_warning(
-              warning_source(method_name),
-              view_path: ActsAsWarnable::Engine.root.join('app/views'),
-              render: "acts_as_warnable/warnings/rescued_error",
-              params: { error: e, inspection: ActsAsWarnable.inspect_error(e) }
-            )
+            issue_error_warning(e, warning_source(method_name))
             raise if options[:raise_anyway]
           end
         end
@@ -56,6 +51,15 @@ module ActsAsWarnable
   end
 
   module WarnableInstanceMethods
+    def issue_error_warning(error, source = "Miscellaneous Error")
+      issue_warning(
+        source,
+        view_path: ActsAsWarnable::Engine.root.join('app/views'),
+        render: "acts_as_warnable/warnings/rescued_error",
+        params: { error: error, inspection: ActsAsWarnable.inspect_error(error) }
+      )
+    end
+
     def warning_source(method_name)
       "#{self.class.name}##{method_name}"
     end

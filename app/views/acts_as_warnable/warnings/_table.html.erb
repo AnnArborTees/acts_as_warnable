@@ -1,7 +1,7 @@
 <table class='table table-striped'>
   <thead>
     <tr>
-      <% if Warning.column_names.include?("created_at") %>
+      <% if ActsAsWarnable::Warning.column_names.include?("created_at") %>
         <th>Date Issued</th>
       <% end %>
       <th>Warnable</th>

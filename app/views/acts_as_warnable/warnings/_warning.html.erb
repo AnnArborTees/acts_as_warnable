@@ -1,4 +1,4 @@
-<% if Warning.column_names.include?("created_at") %>
+<% if ActsAsWarnable::Warning.column_names.include?("created_at") %>
   <td><%= warning.created_at.try(:strftime, '%m/%d/%Y %I:%M%p') || '<unknown>' %></td>
 <% end %>
 <td><%= warning.warnable_type.underscore.humanize %></td>

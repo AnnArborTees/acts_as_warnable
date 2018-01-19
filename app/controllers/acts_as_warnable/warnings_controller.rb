@@ -69,10 +69,11 @@ module ActsAsWarnable
       @warnings = @warnings.where(source: params[:source]) unless params[:source].blank?
 
       if params.key?(:warnable_id) && params.key?(:warnable_type)
-        @warnings = @warnings.where(warnable_id: params[:warnable_id], warnable_type: params[:warnable_type])
+        @warnable = params[:warnable_type].constantize.find(params[:warnable_id])
+
+        @warnings = @warnings.where(warnable: @warnable)
         paginate_if_possible
 
-        @warnable = params[:warnable_type].constantize.find(params[:warnable_id])
         instance_variable_set('@'+params[:warnable_type].underscore, @warnable)
 
         warnables = params[:warnable_type].underscore.pluralize

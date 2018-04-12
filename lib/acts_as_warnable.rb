@@ -8,7 +8,7 @@ module ActsAsWarnable
 
   module ClassMethods
     def acts_as_warnable(options = {})
-      has_many :warnings, as: :warnable
+      has_many :warnings, as: :warnable, class_name: 'ActsAsWarnable::Warning'
       include WarnableInstanceMethods
       extend WarnableClassMethods
     end

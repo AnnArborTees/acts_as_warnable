@@ -59,20 +59,21 @@ module ActsAsWarnable
     protected
 
     def populate_search_options
-      @warning_sources = Warning.group(:source).map(&:source)
+      @warning_sources = ActsAsWarnable::Warning.group(:source).map(&:source)
     end
 
     def search_warnings
-      @warnings = Warning.all
+      @warnings = ActsAsWarnable::Warning.all
       @warnings = @warnings.active if (params.key?(:active_only) && params[:active_only] == 'true')
       @warnings = @warnings.inactive if (params.key?(:active_only) && params[:active_only] == 'false')
       @warnings = @warnings.where(source: params[:source]) unless params[:source].blank?
 
       if params.key?(:warnable_id) && params.key?(:warnable_type)
-        @warnings = @warnings.where(warnable_id: params[:warnable_id], warnable_type: params[:warnable_type])
+        @warnable = params[:warnable_type].constantize.find(params[:warnable_id])
+
+        @warnings = @warnings.where(warnable: @warnable)
         paginate_if_possible
 
-        @warnable = params[:warnable_type].constantize.find(params[:warnable_id])
         instance_variable_set('@'+params[:warnable_type].underscore, @warnable)
 
         warnables = params[:warnable_type].underscore.pluralize
@@ -85,14 +86,14 @@ module ActsAsWarnable
     end
 
     def paginate_if_possible
-      if Warning.column_names.include?('created_at')
+      if ActsAsWarnable::Warning.column_names.include?('created_at')
         @warnings = @warnings.order('created_at desc')
       end
       @warnings = @warnings.page(params[:page] || 1) if @warnings.respond_to?(:page)
     end
 
     def fetch_warning
-      @warning = Warning.find(params[:id])
+      @warning = ActsAsWarnable::Warning.find(params[:id])
     end
 
     def permitted_params

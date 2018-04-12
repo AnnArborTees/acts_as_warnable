@@ -3,7 +3,7 @@ class WarningEmail < ActiveRecord::Base
   validate :model_is_actually_a_model
 
   def warnings
-    Warning.where(warnable_type: model, dismissed_at: nil)
+    ActsAsWarnable::Warning.where(warnable_type: model, dismissed_at: nil)
   end
 
   def send_report

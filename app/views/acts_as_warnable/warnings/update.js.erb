@@ -1,5 +1,6 @@
 <% if @success %>
   $("#warning-<%= @warning.id %>").html("<%= j(render 'warning', warning: @warning) %>");
+  $("#user_warning_table").html("<%= j render "users/warning_table", user: current_devise_user %>");
   successModal("<%= @flash_msg %>");
 <% else %>
   errorModal("<%= @flash_msg %>");

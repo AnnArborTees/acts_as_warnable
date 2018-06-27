@@ -32,20 +32,34 @@ module ActsAsWarnable
   end
 
   module WarnableClassMethods
+    def remove_warning_modules
+      @@warning_modules.try(:each) do |mod|
+        mod.instance_methods.each { |m| mod.send(:undef_method, m) }
+      end
+    end
+
     def warn_on_failure_of(*methods)
       options = methods.last.is_a?(Hash) ? methods.pop : {}
 
       methods.each do |method_name|
-        define_method "#{method_name}_with_warning" do |*args, &block|
-          begin
-            send("#{method_name}_without_warning", *args, &block)
+        original_method = instance_method(method_name)
 
+        method_without_warning = proc do |*args, &block|
+          original_method.bind(self).call(*args, &block)
+        end
+
+        method_with_warning = proc do |*args, &block|
+          begin
+            original_method.bind(self).call(*args, &block)
           rescue Exception => e
-            issue_error_warning(e, warning_source(method_name))
+            issue_error_warning(e, warning_source(method_name.inspect))
             raise if options[:raise_anyway]
           end
         end
-        alias_method_chain method_name, :warning
+
+        define_method("#{method_name}_without_warning", &method_without_warning)
+        define_method("#{method_name}_with_warning", &method_with_warning)
+        define_method(method_name, &method_without_warning)
       end
     end
   end

@@ -59,7 +59,7 @@ module ActsAsWarnable
 
         define_method("#{method_name}_without_warning", &method_without_warning)
         define_method("#{method_name}_with_warning", &method_with_warning)
-        define_method(method_name, &method_without_warning)
+        define_method(method_name, &method_with_warning)
       end
     end
   end

@@ -1,7 +1,7 @@
 module ActsAsWarnable
   class WarningsController < ::ApplicationController
-    before_filter :fetch_warning, only: [:update, :show]
-    before_filter :populate_search_options, only: [:index]
+    before_action :fetch_warning, only: [:update, :show]
+    before_action :populate_search_options, only: [:index]
 
     respond_to :html, :js
 

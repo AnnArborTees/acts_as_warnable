@@ -1,8 +1,5 @@
 module ActsAsWarnable
   class WarningsController < ::ApplicationController
-    before_action :fetch_warning, only: [:update, :show]
-    before_action :populate_search_options, only: [:index]
-
     respond_to :html, :js
 
     helper ActsAsWarnable::Engine.helpers do
@@ -16,10 +13,12 @@ module ActsAsWarnable
     end
 
     def index
+      populate_search_options
       search_warnings
     end
 
     def update
+      fetch_warning
       was_dismissed = @warning.dismissed?
       
       if @warning.update_attributes(permitted_params[:warning])
@@ -53,6 +52,7 @@ module ActsAsWarnable
     end
 
     def show
+      fetch_warning
       render params[:render] if params.key?(:render)
     end
 

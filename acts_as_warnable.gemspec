@@ -23,6 +23,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "devise"
   s.add_development_dependency "sqlite3"
   s.add_development_dependency 'rspec-rails', '~> 3.0'
-  s.add_development_dependency 'factory_girl_rails', '>= 4.2.0'
+  s.add_development_dependency 'factory_bot_rails', '>= 4.2.0'
   s.add_development_dependency 'shoulda-matchers'
 end

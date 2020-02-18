@@ -14,3 +14,4 @@ gemspec
 
 gem 'byebug', group: [:development, :test], platforms: :mri
 gem 'rubinius-debugger', group: [:development, :test], platforms: :rbx
+gem 'loofah', ">= 2.3.1"

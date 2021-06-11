@@ -66,6 +66,11 @@ module ActsAsWarnable
 
   module WarnableInstanceMethods
     def issue_error_warning(error, source = "Miscellaneous Error")
+      begin
+        Sentry.capture_exception(error) 
+      rescue NameError
+      end
+      
       issue_warning(
         source,
         view_path: ActsAsWarnable::Engine.root.join('app/views'),

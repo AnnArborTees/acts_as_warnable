@@ -21,7 +21,7 @@ module ActsAsWarnable
       fetch_warning
       was_dismissed = @warning.dismissed?
       
-      if @warning.update_attributes(permitted_params[:warning])
+      if @warning.update(permitted_params[:warning])
         if !was_dismissed && @warning.dismissed?
           @flash_msg = "Warning dismissed"
         else

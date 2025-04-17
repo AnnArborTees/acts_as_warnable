@@ -94,7 +94,7 @@ module ActsAsWarnable
         view      = opts[:view]   || opts[:template] || opts[:render]
         params    = opts[:params] || opts[:locals]   || {}
 
-        view += ".md" unless view =~ /\.md$/
+        view += ".md.erb" unless view =~ /\.(erb|haml|slim)$/
 
         message = WarningView.new(warning, self, view_path).render(template: view, locals: params)
       else

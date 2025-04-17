@@ -24,7 +24,7 @@ module ActsAsWarnable
     scope :inactive, -> { where.not(dismissed_at: nil) }
 
     def dismiss(user)
-      update_attributes dismissed_at: Time.now, dismisser: user
+      update dismissed_at: Time.now, dismisser: user
     end
 
     def dismissed?

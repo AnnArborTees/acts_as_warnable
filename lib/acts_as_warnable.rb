@@ -101,7 +101,7 @@ module ActsAsWarnable
         message = options_or_message.to_s
       end
 
-      warning.update_attributes! message: message
+      warning.update! message: message
 
       if respond_to?(:create_activity)
         create_activity(

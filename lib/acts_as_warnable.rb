@@ -94,9 +94,24 @@ module ActsAsWarnable
         view      = opts[:view]   || opts[:template] || opts[:render]
         params    = opts[:params] || opts[:locals]   || {}
 
-        view += ".md.erb" unless view =~ /\.(erb|haml|slim)$/
+        # Determine format based on extension
+        format =
+          case view
+          when /\.(html)$/ then :html
+          when /\.(haml)$/ then :haml
+          when /\.(slim)$/ then :slim
+          else :md
+          end
+        
+        # Strip known extensions (e.g., .md.erb, .html.erb, .haml, etc.)
+        view = view.sub(/\.(md|html)?\.(erb|haml|slim)$/, '').sub(/\.(erb|haml|slim|html|md)$/, '')
 
-        message = WarningView.new(warning, self, view_path).render(template: view, locals: params)
+        # Render using format and cleaned view name
+        message = WarningView.new(warning, self, view_path).render(
+          template: view,
+          locals: params,
+          formats: [format]
+        )
       else
         message = options_or_message.to_s
       end

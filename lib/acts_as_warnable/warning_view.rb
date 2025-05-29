@@ -12,7 +12,7 @@ module ActsAsWarnable
       lookup_context = ActionView::LookupContext.new(@view_path)
       lookup_context.formats = formats
 
-      view = ActionView::Base.with_view_paths(@view_path).new(lookup_context, locals, nil)
+      view = ActionView::Base.with_view_paths(@view_path)
       view.view_renderer = ActionView::Renderer.new(lookup_context)
 
       if @warnable

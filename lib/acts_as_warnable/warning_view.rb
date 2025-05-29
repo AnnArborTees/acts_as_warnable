@@ -9,16 +9,14 @@ module ActsAsWarnable
     def render(template:, locals: {}, formats: [:md])
       lookup_context = ActionView::LookupContext.new(@view_path)
       lookup_context.formats = formats
-
-      # Create a fresh view instance
-      view = ActionView::Base.with_view_paths(@view_path)
-
-      # Expose `warning` and the warnable object in the template context
+    
+      view = ActionView::Base.with_empty_template_cache.with_view_paths(@view_path)
+    
       view.define_singleton_method(:warning) { @warning }
       if @warnable
         view.define_singleton_method(@warnable.class.name.underscore) { @warnable }
       end
-
+    
       view.render(
         template: template,
         formats: formats,

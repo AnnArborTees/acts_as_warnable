@@ -106,8 +106,7 @@ module ActsAsWarnable
         # Strip known extensions
         view = view.sub(/\.(md|html)?\.(erb|haml|slim)$/, '').sub(/\.(erb|haml|slim|html|md)$/, '')
     
-        # ✅ NEW: Instantiate with empty template cache
-        view_instance = WarningView.with_empty_template_cache(view_path, {}, self)
+        view_instance = WarningView.new(warning, self, view_path)
     
         message = view_instance.render(
           template: view,

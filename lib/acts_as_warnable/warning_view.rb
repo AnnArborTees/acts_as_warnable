@@ -1,30 +1,28 @@
 module ActsAsWarnable
-  class WarningView < ActionView::Base
-    # This class defines helpers that can be called within any warning
-    # markdown template.
+  class WarningView
+    # This class defines helpers that can be called within any warning markdown template.
 
     def initialize(warning, object, path)
       @warning = warning
       @warnable = object
+      @view_path = path
+    end
 
-      lookup_context = ActionView::LookupContext.new(path)
-      lookup_context.formats = [:md, :html]
+    def render(template:, locals: {}, formats: [:md, :html])
+      lookup_context = ActionView::LookupContext.new(@view_path)
+      lookup_context.formats = formats
 
-      super(lookup_context, {}, nil)
+      view = ActionView::Base.with_view_paths(@view_path).new(lookup_context, locals, nil)
+      view.view_renderer = ActionView::Renderer.new(lookup_context)
 
-      unless object.nil?
-        # Define a named accessor for the object,
-        # e.g. a warning from an Order can call `order` within the view.
-        define_singleton_method(object.class.name.underscore) { object }
+      if @warnable
+        method_name = @warnable.class.name.underscore
+        view.define_singleton_method(method_name) { @warnable }
       end
-    end
 
-    def object
-      @warnable
-    end
+      view.define_singleton_method(:warning) { @warning }
 
-    def warning
-      @warning
+      view.render(template: template, formats: formats, locals: locals)
     end
   end
 end

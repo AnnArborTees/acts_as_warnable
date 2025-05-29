@@ -59,7 +59,7 @@ module ActsAsWarnable
     protected
 
     def populate_search_options
-      @warning_sources = ActsAsWarnable::Warning.group(:source).map(&:source)
+       @warning_sources = ActsAsWarnable::Warning.distinct.pluck(:source)
     end
 
     def search_warnings

@@ -85,15 +85,15 @@ module ActsAsWarnable
 
     def issue_warning(source, options_or_message)
       warning = warnings.create(source: source, message: options_or_message.inspect)
-
+    
       case options_or_message
       when Hash
         opts = options_or_message.with_indifferent_access
-
+    
         view_path = opts[:view_path] || Rails.configuration.paths["app/views"].first
         view      = opts[:view]   || opts[:template] || opts[:render]
         params    = opts[:params] || opts[:locals]   || {}
-
+    
         # Determine format based on extension
         format =
           case view
@@ -102,12 +102,14 @@ module ActsAsWarnable
           when /\.(slim)$/ then :slim
           else :md
           end
-        
-        # Strip known extensions (e.g., .md.erb, .html.erb, .haml, etc.)
+    
+        # Strip known extensions
         view = view.sub(/\.(md|html)?\.(erb|haml|slim)$/, '').sub(/\.(erb|haml|slim|html|md)$/, '')
-
-        # Render using format and cleaned view name
-        message = WarningView.new(warning, self, view_path).render(
+    
+        # ✅ NEW: Instantiate with empty template cache
+        view_instance = WarningView.with_empty_template_cache(view_path, {}, self)
+    
+        message = view_instance.render(
           template: view,
           locals: params,
           formats: [format]
@@ -115,9 +117,9 @@ module ActsAsWarnable
       else
         message = options_or_message.to_s
       end
-
+    
       warning.update! message: message
-
+    
       if respond_to?(:create_activity)
         create_activity(
           key: 'warning.issue',
@@ -125,6 +127,7 @@ module ActsAsWarnable
         )
       end
     end
+
   end
 end
 

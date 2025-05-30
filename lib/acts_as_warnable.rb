@@ -40,23 +40,24 @@ module ActsAsWarnable
 
     def warn_on_failure_of(*methods)
       options = methods.last.is_a?(Hash) ? methods.pop : {}
-
+    
       methods.each do |method_name|
         original_method = instance_method(method_name)
-
+    
         method_without_warning = proc do |*args, &block|
           original_method.bind(self).call(*args, &block)
         end
-
+    
         method_with_warning = proc do |*args, &block|
           begin
             original_method.bind(self).call(*args, &block)
           rescue Exception => e
-            issue_error_warning(e, warning_source(method_name.inspect))
+            # Only issue warning if the record is persisted (saved)
+            issue_error_warning(e, warning_source(method_name.inspect)) if persisted?
             raise if options[:raise_anyway]
           end
         end
-
+    
         define_method("#{method_name}_without_warning", &method_without_warning)
         define_method("#{method_name}_with_warning", &method_with_warning)
         define_method(method_name, &method_with_warning)

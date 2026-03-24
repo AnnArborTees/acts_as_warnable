@@ -9,8 +9,8 @@
 <h3>Search Warnings</h3>
 
 <%
-if params[:warnable_type]
-  form_action = send("#{params[:warnable_type].underscore}_warnings_path")
+if params[:warnable_type].present? && params[:warnable_id].present?
+  form_action = send("#{params[:warnable_type].underscore}_warnings_path", params[:warnable_id])
 else
   form_action = ActsAsWarnable::Engine.routes.url_helpers.warnings_path
 end

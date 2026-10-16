@@ -58,6 +58,15 @@ describe ActsAsWarnable::Warning do
       expect(keeper).not_to be_dismissed
     end
 
+    it 'treats a NULL occurrences value as 1' do
+      keeper = make_warning
+      make_warning(created_at: 2.days.ago).update_columns(occurrences: nil)
+
+      described_class.merge_duplicates!
+
+      expect(keeper.reload.occurrences).to eq 2
+    end
+
     it 'leaves warnings that differ by source, message or warnable alone' do
       make_warning
       make_warning(source: 'other src')

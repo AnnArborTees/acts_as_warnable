@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20261015000000) do
     t.integer  "dismisser_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "occurrences",    default: 1, null: false
+    t.integer  "occurrences",    default: 1
     t.datetime "last_issued_at"
   end
 

@@ -1,6 +1,6 @@
 class AddOccurrencesToWarnings < ActiveRecord::Migration[<%= migration_version %>]
   def change
-    add_column :warnings, :occurrences, :integer, null: false, default: 1
+    add_column :warnings, :occurrences, :integer, default: 1
     add_column :warnings, :last_issued_at, :datetime
 
     if column_exists?(:warnings, :created_at)

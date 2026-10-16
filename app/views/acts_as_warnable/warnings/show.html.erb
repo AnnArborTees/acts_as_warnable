@@ -8,6 +8,15 @@
   <h4><%= @warning.created_at.strftime('%b %d, %Y, %I:%M %p') %></h4>
 <% end %>
 
+<% if ActsAsWarnable::Warning.tracks_occurrences? && @warning.reissued? %>
+  <h4 class='warning-occurrences'>
+    Issued <%= @warning.occurrences %> times
+    <% if @warning.last_issued_at.respond_to?(:strftime) %>
+      (most recently <%= @warning.last_issued_at.strftime('%b %d, %Y, %I:%M %p') %>)
+    <% end %>
+  </h4>
+<% end %>
+
 <% if @warning.dismissed? %>
   <h1><span class='label label-warning'>Dismissed</span></h1>
 <% end %>

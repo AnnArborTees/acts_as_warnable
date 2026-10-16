@@ -5,5 +5,6 @@ class ActsAsWarnable::WarningGenerator < Rails::Generators::Base
     generate 'migration', 'CreateWarnings warnable_id:integer warnable_type:string source:string message:text dismissed_at:datetime dismisser_id:integer'
     generate 'migration', 'AddTimestampsToWarnings created_at:datetime updated_at:datetime'
     generate 'migration', 'CreateWarningEmails model:string minutes:decimal\\{10,2\\} recipient:string url:string'
+    generate 'acts_as_warnable:occurrences'
   end
 end

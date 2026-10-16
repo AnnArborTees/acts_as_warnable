@@ -109,6 +109,36 @@ but if you'd rather the error get re-thrown, you can do this:
 warn_on_failure_of :important_task, raise_anyway: true
 ```
 
+### Repeated warnings
+
+Issuing the same warning (same source and rendered message) on a record that already
+has an identical *active* warning doesn't create another row. Instead the existing
+warning's `occurrences` is incremented and its `last_issued_at` refreshed, and
+`issue_warning` returns that existing warning. No `warning.issue` activity is fired for
+a repeat.
+
+A dismissed warning is closed: issuing it again creates a brand new warning with its
+own count, so you can tell "this came back after we dismissed it" apart from "this has
+been happening the whole time".
+
+Occurrence tracking needs two extra columns. Existing apps should run:
+```bash
+rails generate acts_as_warnable:occurrences
+rake db:migrate
+```
+(`rails generate acts_as_warnable:warning` includes this for new installs.) Without the
+columns the gem falls back to the old one-row-per-issue behavior.
+
+To collapse duplicates that piled up before the upgrade:
+```bash
+rake acts_as_warnable:merge_duplicates
+```
+This merges rows with the same warnable, source, message and dismissal state into the
+oldest one, summing `occurrences`, keeping the latest `last_issued_at`, and (for dismissed
+groups) the latest dismissal. Public Activity records that pointed at removed rows are
+re-pointed to the kept warning. It's also available as
+`ActsAsWarnable::Warning.merge_duplicates!(scope: SomeModel.warnings)`.
+
 ### Dismissal
 
 Warnings can also be "dismissed" by users of your app. As of right now, ActsAsWarnable

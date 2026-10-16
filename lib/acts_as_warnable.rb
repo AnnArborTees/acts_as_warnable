@@ -84,48 +84,77 @@ module ActsAsWarnable
       "#{self.class.name}##{method_name}"
     end
 
+    # Issues a warning on this record.
+    #
+    # If an identical *active* warning (same source and rendered message) already
+    # exists on this record, no new warning is created; instead the existing one has
+    # its `occurrences` bumped and `last_issued_at` refreshed. Once a warning has
+    # been dismissed it is considered closed: issuing the same warning again creates
+    # a fresh warning with its own count.
+    #
+    # Returns the warning that was created or re-issued.
     def issue_warning(source, options_or_message)
-      warning = warnings.create(source: source, message: options_or_message.inspect)
-    
-      case options_or_message
-      when Hash
-        opts = options_or_message.with_indifferent_access
-    
-        view_path = opts[:view_path] || Rails.configuration.paths["app/views"].first
-        view      = opts[:view]   || opts[:template] || opts[:render]
-        params    = opts[:params] || opts[:locals]   || {}
-    
-        # Determine format based on extension
-        format =
-          case view
-          when /\.(html)$/ then :html
-          when /\.(haml)$/ then :haml
-          when /\.(slim)$/ then :slim
-          else :md
-          end
-    
-        # Strip known extensions
-        view = view.sub(/\.(md|html)?\.(erb|haml|slim)$/, '').sub(/\.(erb|haml|slim|html|md)$/, '')
-    
-        view_instance = WarningView.new(warning, self, view_path)
-    
-        message = view_instance.render(
-          template: view,
-          locals: params,
-          formats: [format]
-        )
-      else
-        message = options_or_message.to_s
+      message = render_warning_message(source, options_or_message)
+
+      if (existing = find_duplicate_warning(source, message))
+        existing.record_occurrence!
+        return existing
       end
-    
-      warning.update! message: message
-    
+
+      attributes = { source: source, message: message }
+      attributes[:last_issued_at] = Time.current if ActsAsWarnable::Warning.tracks_occurrences?
+
+      warning = warnings.create!(attributes)
+
       if respond_to?(:create_activity)
         create_activity(
           key: 'warning.issue',
           recipient: warning
         )
       end
+
+      warning
+    end
+
+    def find_duplicate_warning(source, message)
+      return nil unless ActsAsWarnable::Warning.tracks_occurrences?
+      return nil unless persisted?
+
+      warnings.active.where(source: source, message: message).order(:id).first
+    end
+
+    def render_warning_message(source, options_or_message)
+      return options_or_message.to_s unless options_or_message.is_a?(Hash)
+
+      opts = options_or_message.with_indifferent_access
+
+      view_path = opts[:view_path] || Rails.configuration.paths["app/views"].first
+      view      = opts[:view]   || opts[:template] || opts[:render]
+      params    = opts[:params] || opts[:locals]   || {}
+
+      # Determine format based on extension
+      format =
+        case view
+        when /\.(html)$/ then :html
+        when /\.(haml)$/ then :haml
+        when /\.(slim)$/ then :slim
+        else :md
+        end
+
+      # Strip known extensions
+      view = view.sub(/\.(md|html)?\.(erb|haml|slim)$/, '').sub(/\.(erb|haml|slim|html|md)$/, '')
+
+      # The template gets an unsaved warning so it can reference the source and
+      # warnable. It has no id yet - and shouldn't be used in the message anyway,
+      # since that would defeat duplicate detection.
+      warning = ActsAsWarnable::Warning.new(source: source, warnable: self)
+      view_instance = WarningView.new(warning, self, view_path)
+
+      view_instance.render(
+        template: view,
+        locals: params,
+        formats: [format]
+      )
     end
 
   end

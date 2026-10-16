@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150827210238) do
+ActiveRecord::Schema.define(version: 20261015000000) do
 
   create_table "test_objects", force: :cascade do |t|
     t.string "name"
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 20150827210238) do
     t.integer  "dismisser_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "occurrences",    default: 1, null: false
+    t.datetime "last_issued_at"
   end
 
 end

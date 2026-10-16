@@ -1,6 +1,6 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :warning do
-    source "FactoryGirl"
-    message "This is a just drill"
+    source { 'FactoryBot' }
+    message { 'This is a just drill' }
   end
 end

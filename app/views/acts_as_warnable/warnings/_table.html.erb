@@ -1,8 +1,13 @@
+<% tracks_occurrences = ActsAsWarnable::Warning.tracks_occurrences? %>
 <table class='table table-striped'>
   <thead>
     <tr>
       <% if ActsAsWarnable::Warning.column_names.include?("created_at") %>
         <th>Date Issued</th>
+      <% end %>
+      <% if tracks_occurrences %>
+        <th>Last Issued</th>
+        <th>Count</th>
       <% end %>
       <th>Warnable</th>
       <th>Warnable ID</th>

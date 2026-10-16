@@ -1,0 +1,12 @@
+class AddOccurrencesToWarnings < ActiveRecord::Migration[<%= migration_version %>]
+  def change
+    add_column :warnings, :occurrences, :integer, null: false, default: 1
+    add_column :warnings, :last_issued_at, :datetime
+
+    if column_exists?(:warnings, :created_at)
+      reversible do |dir|
+        dir.up { execute "UPDATE warnings SET last_issued_at = created_at WHERE last_issued_at IS NULL" }
+      end
+    end
+  end
+end

@@ -1,6 +1,16 @@
 <% if ActsAsWarnable::Warning.column_names.include?("created_at") %>
   <td><%= warning.created_at.try(:strftime, '%m/%d/%Y %I:%M%p') || '<unknown>' %></td>
 <% end %>
+<% if ActsAsWarnable::Warning.tracks_occurrences? %>
+  <td><%= warning.last_issued_at.try(:strftime, '%m/%d/%Y %I:%M%p') || '<unknown>' %></td>
+  <td>
+    <% if warning.reissued? %>
+      <span class='badge warning-occurrences' title='Issued <%= warning.occurrences %> times'><%= warning.occurrences %></span>
+    <% else %>
+      <%= warning.occurrences %>
+    <% end %>
+  </td>
+<% end %>
 <td><%= warning.warnable_type.underscore.humanize %></td>
 <td><%= warning.warnable_id %></td>
 <td><%= warning.message.truncate(50) %></td>

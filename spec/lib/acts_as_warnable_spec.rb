@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe ActsAsWarnable do
+describe ActsAsWarnable, type: :model do
   describe 'a class that acts as warnable' do
     subject { TestObject.new }
 

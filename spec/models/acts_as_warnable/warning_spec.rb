@@ -33,9 +33,14 @@ describe ActsAsWarnable::Warning do
     let(:warnable) { TestObject.create(name: 'dupes') }
     let(:other_warnable) { TestObject.create(name: 'other') }
 
+    # Writes dismissal columns directly, since assigning dismisser_id through
+    # the model stamps dismissed_at with the current time.
     def make_warning(attrs = {})
       defaults = { warnable: warnable, source: 'src', message: 'same thing', created_at: 3.days.ago, last_issued_at: 3.days.ago }
-      ActsAsWarnable::Warning.create!(defaults.merge(attrs))
+      dismissal = attrs.extract!(:dismissed_at, :dismisser_id)
+      ActsAsWarnable::Warning.create!(defaults.merge(attrs)).tap do |warning|
+        warning.update_columns(dismissal) if dismissal.any?
+      end
     end
 
     it 'collapses identical active warnings into the oldest, summing occurrences' do
@@ -115,7 +120,7 @@ describe ActsAsWarnable::Warning do
 
   describe 'when a dismisser_id is assigned' do
     it 'sets dismissed_at to Time.now' do
-      now = Time.now
+      now = Time.now.change(usec: 0)
       allow(Time).to receive(:now).and_return now
 
       expect(subject.dismissed_at).to be_nil

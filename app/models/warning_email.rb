@@ -47,8 +47,8 @@ class WarningEmail < ActiveRecord::Base
   private
 
   def model_is_actually_a_model
-    model_class = model.constantize
-    unless model_class.ancestors.include?(ActiveRecord::Base)
+    model_class = model.to_s.safe_constantize
+    unless model_class.is_a?(Class) && model_class.ancestors.include?(ActiveRecord::Base)
       errors.add 'model', 'must correspond to a valid model'
     end
   end

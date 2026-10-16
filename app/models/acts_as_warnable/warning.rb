@@ -18,7 +18,7 @@ module ActsAsWarnable
       include Softwear::Auth::BelongsToUser
       belongs_to_user_called :dismisser
     else
-      belongs_to :dismisser, class_name: dismisser_class
+      belongs_to :dismisser, class_name: dismisser_class.name
     end
 
     validates :message, :source, presence: true

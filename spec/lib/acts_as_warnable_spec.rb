@@ -144,3 +144,21 @@ describe ActsAsWarnable, type: :model do
     end
   end
 end
+
+describe ActsAsWarnable::WarningView do
+  let(:warnable) { TestObject.create(name: 'viewer') }
+  let(:view_path) { Rails.root.join('spec/fixtures/views') }
+
+  it 'exposes the warning and the warnable to the template' do
+    message = warnable.issue_warning(
+      'warning_view_spec',
+      view_path: view_path,
+      render: 'warnings/example.md.erb',
+      params: { detail: 'extra' }
+    ).message
+
+    expect(message).to include 'source=warning_view_spec'
+    expect(message).to include "test_object=#{warnable.name}"
+    expect(message).to include 'detail=extra'
+  end
+end

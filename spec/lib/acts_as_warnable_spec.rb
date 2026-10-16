@@ -161,4 +161,18 @@ describe ActsAsWarnable::WarningView do
     expect(message).to include "test_object=#{warnable.name}"
     expect(message).to include 'detail=extra'
   end
+
+  it 'also exposes an STI subclass under its base class name' do
+    stub_const('FancyTestObject', Class.new(TestObject))
+    fancy = FancyTestObject.create(name: 'fancy')
+
+    message = fancy.issue_warning(
+      'warning_view_spec',
+      view_path: view_path,
+      render: 'warnings/example.md.erb',
+      params: { detail: 'sti' }
+    ).message
+
+    expect(message).to include 'test_object=fancy'
+  end
 end

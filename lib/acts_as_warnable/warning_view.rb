@@ -18,8 +18,8 @@ module ActsAsWarnable
       warnable = @warnable
 
       view.define_singleton_method(:warning) { warning }
-      if warnable
-        view.define_singleton_method(warnable.class.name.underscore) { warnable }
+      warnable_method_names(warnable).each do |name|
+        view.define_singleton_method(name) { warnable }
       end
 
       view.render(
@@ -27,6 +27,19 @@ module ActsAsWarnable
         formats: formats,
         locals: locals
       )
+    end
+
+    private
+
+    # The warnable is exposed under its own class name and, for STI models,
+    # its base class name too (so a SalesOrder < Order is available as `order`).
+    def warnable_method_names(warnable)
+      return [] if warnable.nil?
+
+      klass = warnable.class
+      base  = klass.respond_to?(:base_class) ? klass.base_class : klass
+
+      [klass.name, base.name].compact.map(&:underscore).uniq
     end
   end
 end
